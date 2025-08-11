@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import { getServerSession } from 'next-auth'
+import { authOptions } from './api/auth/[...nextauth]/route'
+import { SignInButton } from '../components/sign-in-button'
 import { Button } from '../components/ui/button'
 
 export default async function HomePage() {
-  const session = await getServerSession()
+  const session = await getServerSession(authOptions)
   const isAuthorized = Boolean(session)
 
   return (
@@ -15,7 +17,7 @@ export default async function HomePage() {
       ) : (
         <>
           <Button>Створити сторінку</Button>
-          <Button variant="secondary">Увійти</Button>
+          <SignInButton />
         </>
       )}
     </main>
