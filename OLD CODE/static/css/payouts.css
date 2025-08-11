@@ -1,0 +1,1696 @@
+/**  src/css/payouts.css  **/
+
+/**
+ * Payouts
+ *
+ */
+
+.payouts .section-wrapper {
+	min-height: 146px;
+	padding: 24px;
+	margin-top: 24px;
+	border-radius: 20px;
+	background: #FFF;
+	box-shadow: 0 4px 10px 0 rgba(235, 235, 235, 0.80);
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.payouts .section-wrapper.section-wrapper-top {
+	height: 90%;
+}
+
+.payouts .section-wrapper h3 {
+	margin-bottom: 40px;
+}
+
+
+/* ----  Controls  ---- */
+
+.payouts .payment-terms {
+	align-items: center;
+	display: flex;
+	color: #3579F6;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.payouts .payment-terms i,
+.payouts .alert-info i {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.payouts .payment-terms i {
+	border: 1px solid #3579F6;
+	margin-left: 4px;
+    font-size: 8px;
+	width: 16px;
+	min-width: 16px;
+    height: 16px;
+}
+
+.payouts .alert-info i {
+	margin-right: 8px;
+    font-size: 14px;
+	width: 20px;
+	min-width: 20px;
+    height: 20px;
+}
+
+.payouts .alert-info {
+	background: #E4ECFA;
+	font-size: 13px;
+}
+
+.payouts .balance-count, .panel .balance-count {
+	margin: 16px 0;
+	font-size: 24px;
+	font-weight: 800;
+	line-height: 24px;
+}
+
+.payouts .balance-count .currency, .panel .balance-count .currency {
+	color: #8D939C;
+	font-size: 1rem;
+	margin-left: 1px;
+	opacity: 1;
+}
+
+.payouts .card-info {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	margin-top: 6px;
+}
+
+.payouts .card-info input {
+	height: auto;
+	padding: 8px 10px;
+	font-size: 14px;
+	font-weight: 500;
+	border-radius: 10px;
+	border: 2px solid #E3E5E8;
+	border-left: none;
+}
+
+.payouts .card-info .input-group-text {
+	border: 2px solid #E3E5E8;
+	border-right: none;
+	padding-left: 9px;
+	padding-right: 6px;
+}
+
+.payouts .card-info .input-group-text i {
+	color: #8D939C;
+}
+
+.payouts .form-control.card-input {
+	font-family: monospace;
+}
+
+.payouts .card-info .control-icon {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	margin-left: 8px;
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    background: #F6F6F7;
+    border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+.payouts .card-info .control-icon:hover {
+	background: #E3E5E8;
+}
+
+.payouts .card-info .iban {
+	font-family: monospace;
+	font-size: 13px;
+}
+
+.payouts .alert-warning {
+	background: #FDF4DA;
+	border-color: #FDF4DA;
+	color: #E2A417;
+}
+
+.payouts .section-wrapper h5 {
+	margin-bottom: 12px;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.payouts .run-payout {
+	padding: 24px;
+	border-radius: 16px;
+	border: 1px solid #E3E5E8;
+}
+
+.payouts .run-payout .btn {
+	padding: 12px 30px;
+	border-radius: 40px;
+}
+
+.payouts-wrapper .mode-buttons .btn {
+	padding: 6px 16px;
+	border: 2px solid #ffffff00;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+}
+
+.payouts-wrapper .mode-buttons .btn.active {
+	border-radius: 10px;
+	border: 2px solid #3579F6;
+	background: #fff;
+	color: #3579F6;
+}
+
+.payouts .text-disclaimer {
+	font-weight: 400;
+	font-size: 0.8rem;
+}
+
+.payouts .info {
+    color: #98a6ad;
+    margin: 0 0 15px 15px;
+}
+
+.payouts .info i.fas {
+    margin-right: 10px;
+}
+
+.payouts .control-header {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    justify-content: flex-end;
+}
+
+.payouts .control-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.payouts.services .control-item .badge.alert-primary {
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+.payouts .icon {
+	font-size: 20px;
+    color: #AFB3BB;
+    margin: 0 8px 0 0;
+}
+
+.dark .payouts .control-item .badge.alert-primary {
+	background-color: #344862;
+	border-color: #344862;
+	color: #FFFFFF;
+}
+
+.payouts .control-item .count-muted {
+    font-weight: 400;
+}
+
+.payouts .control-header .text {
+    opacity: 0.8;
+}
+
+.payouts .control-item .badge-highlight {
+	font-weight: 700;
+	padding: 8px 35px;
+}
+
+.dark .payouts .control-item .badge-highlight {
+	border-color: #344862;
+	background-color: #344862;
+	color: #fff;
+}
+
+.payouts .form-control:focus {
+	border-color: #e9ecef;
+}
+
+.payouts .section-wrapper .wallet {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.8rem;
+}
+
+.payouts .control-icon.fa-check-circle {
+    color: #4cae4c;
+}
+
+.payouts .card-not-valid {
+    border-color: #f5c6cb;
+}
+
+.payouts.whitepay .total-item .alert-primary {
+    color: #32509a;
+    background-color: #E1EAFF;
+    border-color: #E1EAFF;
+}
+
+.payouts.whitepay .payout-terms:last-child {
+    border-color: #E1EAFF;
+}
+
+.payouts .accordion>.card {
+    border: none;
+	margin-bottom: 8px;
+}
+
+.payouts .accordion>.card>.card-header {
+	border-radius: 10px;
+	background: #F6F6F7;
+}
+
+
+
+/* ----  Grid  ---- */
+
+.payouts .card {
+    border-bottom: none;
+    box-shadow: none;
+    /* font-size: 0.8rem; */
+    margin-bottom: 0;
+}
+
+.payouts .card {
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+}
+
+.payouts .card {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+}
+
+.payouts .card-header {
+    background: none;
+    border-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.payouts .card-header:hover {
+    background-color: #00000013;
+}
+
+.payouts .card-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.payouts .card-header.collapsed {
+    border-radius: 15px;
+}
+
+.payouts .card-header .toggle {
+    margin-right: 30px;
+}
+
+.payouts .card-header .toggle i {
+    transform: rotate(0deg);
+    transition: transform 100ms linear;
+}
+
+.payouts .card-header.expanded .toggle i {
+    transform: rotate(180deg);
+    transition: transform 100ms linear;
+}
+
+.payouts .card-header .badge,
+.payouts .card-body .badge {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 8px;
+	border-radius: 8px;
+	line-height: 20px;
+}
+
+.payouts .card-header .badge {
+	width: auto;
+}
+
+.payouts .payout-terms .rc-slider-mark-text {
+    display: none;
+}
+
+.payouts .payout-terms .card-header .toggle {
+    margin-right: 18px;
+}
+
+.payouts .payout-terms {
+    border-color: #cce5ff;
+    border-radius: 8px !important;
+}
+
+.payouts .payout-terms:last-child {
+    border-color: #cce5ff;
+}
+
+.dark .payouts .payout-terms:last-child {
+	border-color: #344862;
+}
+
+.payouts .payout-terms .card-header .toggle {
+    color: #004085;
+}
+
+.dark .payouts .payout-terms .card-header .toggle {
+	color: #ccc;
+}
+
+.payouts .badge-new {
+    color: #004085;
+    background-color: #cce5ff;
+    border: 1px solid #b8daff;
+}
+
+.payouts .badge-pending,
+.payouts .badge-processing,
+.payouts .badge-review,
+.payouts .badge-paused {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+}
+
+.payouts .badge-completed {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.payouts .badge-canceled, .badge-skipped, .badge-canceled {
+    background-color: #e5e5e6;
+    border: 1px solid #dcdbdb;
+    color: #1b1e21;
+}
+
+.payouts .badge-hold, .payouts .badge-failure {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.payouts .badge-merged {
+	background-color: #dbdbed;
+	border-color: #c7c7df;
+	color: #535659;
+}
+
+.payouts .badge-combined {
+	color: #2755a8;
+}
+
+.payouts .badge-reversed, .payouts .badge-return, .payouts .badge-resolved {
+	color: #fff;
+	background-color: #9b59b6;
+	border-color: #8949a3;
+}
+
+.payouts .card-header .payout-id {
+    color: #8D939C;
+}
+
+.payouts .card-header .amount {
+    font-size: 0.85rem;
+    font-weight: 700;
+    min-width: 90px;
+    text-align: right;
+}
+
+.payouts .brief-info {
+    display: flex;
+    align-items: center;
+	padding-left: 0;
+}
+
+.payouts .brief-info .icon {
+    color: #AFB3BB;
+    font-size: 1.2rem;
+    margin-right: 12px;
+}
+
+.payouts .brief-info .icon.fa-comment {
+    margin-right: 8px;
+}
+
+.payouts .brief-info .text {
+	background: #F6F6F7;
+	border: 2px solid #E3E5E8;
+	border-radius: 10px;
+	font-family: monospace, monospace;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 10px 16px;
+	text-align: center;
+	opacity: 0.7;
+}
+
+.payouts .brief-info .text-card {
+	max-width: 200px;
+	width: 100%;
+}
+
+.payouts .brief-info .text-wallet {
+	min-width: 330px;
+	width: 100%;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.payouts .brief-info .text-iban {
+	min-width: 270px;
+	width: 100%;
+}
+
+.payouts .brief-info .text-transfer {
+	font-family: 'Roboto', sans-serif;
+}
+
+.payouts .text-comment {
+    color: #8D939C;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.payouts .action .btn {
+    height: 32px;
+    font-size: 0.8rem;
+    min-width: 90px;
+}
+
+.payouts .note {
+    color: #999999;
+    font-size: 0.75rem;
+    margin-left: 0;
+}
+
+.payouts .note div > div {
+    display: flex;
+}
+
+.payouts .note .col-half > div > span:first-child {
+    min-width: 90px;
+}
+
+.payouts .note .col-half:last-child > div > span:last-child {
+    text-align: right;
+    width: 40px;
+}
+
+.payouts .service-fee-muted {
+    font-size: 9px;
+    margin-left: 3px;
+}
+
+.payouts .original-amount {
+    margin-right: 8px;
+}
+
+.payouts .currency {
+    font-size: 80%;
+    margin-left: 4px;
+    opacity: 0.6;
+}
+
+.payouts .original-amount .currency {
+    font-size: 90%;
+    margin-left: 1px;
+    opacity: 0.8;
+}
+
+.payouts .original-amount .currency.prefix {
+    margin-left: 0;
+    margin-right: 1px;
+}
+
+
+/* ----  rc-slider  ---- */
+
+.rc-slider .rc-slider-track,
+.rc-slider .rc-slider-dot.rc-slider-dot-active {
+	background-color: #3579F6;
+}
+
+.rc-slider .rc-slider-handle {
+    margin-left: -9px;
+    margin-top: -7px;
+    width: 18px;
+    height: 18px;
+    border-color: #ffffff;
+    background-color: #3579F6;
+}
+
+.rc-slider .rc-slider-dot {
+	bottom: -5px;
+    margin-left: -7px;
+    width: 14px;
+    height: 14px;
+	border: 2px solid #ffffff;
+	background-color: #C7CBD1;
+}
+
+.rc-slider .rc-slider-rail {
+	background-color: #C7CBD1;
+}
+
+.dark .rc-slider .rc-slider-dot,
+.dark .rc-slider .rc-slider-handle {
+	border-color: #191919;
+}
+
+.rc-slider-custom-tooltip {
+    background-color: #FFF;
+    padding: 4px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px 0px rgba(235, 235, 235, 0.80);
+    border: 1px solid #E3E5E8;
+}
+
+.rc-slider-custom-tooltip div {
+	background-color: #FFF;
+	font-size: 14px;
+    font-weight: 500;
+	border: none;
+	box-shadow: none;
+	color: #0A1830;
+}
+
+.dark .rc-slider-custom-tooltip {
+    background-color: #272727;
+    box-shadow: none;
+    border-color: #3a3a3a;
+}
+
+.dark .rc-slider-custom-tooltip div {
+	background-color: #272727;
+	color: #fafafa;
+}
+
+
+/* ----  Table  ---- */
+
+.payouts .table {
+    margin-top: 24px;
+	margin-bottom: 0;
+}
+
+.payouts .table thead th {
+    border-top: none;
+    border-bottom: 1px solid #dee2e6;
+	color: #6C7483;
+}
+
+.payouts .card-body .table th:nth-child(2),
+.payouts .card-body .table th:nth-child(3),
+.payouts .table th.date,
+.payouts .table th.client-name {
+    min-width: 150px;
+}
+
+.payouts .card-body .table th:nth-child(4),
+.payouts .table th.pub-order-id {
+    min-width: 120px;
+}
+
+.payouts .table .selected {
+    background-color: #E4ECFA;
+}
+
+.payouts .table .selected ~ tr:not(.total-row) {
+    background-color: #E4ECFA;
+}
+
+.payouts .table .selected ~ tr:hover,
+.payouts .table .selected:hover {
+    background-color: #d2dced;
+}
+
+.payouts .table .total-row {
+    font-weight: 700;
+}
+
+.payouts .table .text-muted {
+    color: #8D939C !important;
+}
+
+.payouts-donatello .table td,
+.payouts-donatello .table th {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+.payouts .opened-payuot-checkbox {
+	padding: 3px 0 0 4px;
+	vertical-align: middle;
+}
+
+.payouts .opened-payuot-checkbox input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+}
+
+.admin-payouts .payouts {
+    padding-bottom: 0;
+}
+
+.admin-payouts .payouts-completed .table td, .admin-payouts .payouts-completed .table th,
+.admin-payouts .payouts-canceled .table td, .admin-payouts .payouts-canceled .table th{
+    padding: 0.5rem 0.4rem;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.admin-payouts .payouts-completed .table td a,
+.admin-payouts .payouts-canceled .table td a {
+    display: inline-block;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    width: 150px;
+    white-space: nowrap;
+}
+
+.admin-payouts a.user-name {
+    color: #333;
+}
+
+.dark .admin-payouts a.user-name {
+    color: #FFFFFF;
+}
+
+
+@media (min-width: 767px) and (max-width: 1330px) {
+	.payouts .card-body .table th:nth-child(2),
+	.payouts .card-body .table th:nth-child(3),
+	.payouts .table th.date,
+	.payouts .table th.client-name {
+		min-width: 100px;
+	}
+
+	.payouts .card-body .table th:nth-child(4),
+	.payouts .table th.pub-order-id {
+		min-width: 75px;
+	}
+}
+
+@media (max-width: 767px) {
+	.payouts .card-header .toggle {
+		position: absolute;
+		top: 8px;
+		right: 10px;
+		margin-right: 0;
+	}
+
+	.payouts .card-header-container {
+		align-items: flex-start;
+	}
+
+	.payouts .card-header .amount {
+		text-align: left;
+	}
+
+	.payouts .card-header-container span {
+		margin-bottom: 16px;
+	}
+
+	.payouts .brief-info .text-wallet,
+	.payouts .brief-info .text-iban {
+		min-width: auto;
+		width: auto;
+	}
+
+	.payouts .brief-info .text {
+		overflow: hidden;
+	}
+}
+
+/**
+ * Mobile view
+ *
+ */
+
+@media (max-width: 575px) {
+	.payouts .section-wrapper {
+		padding: 16px;
+	}
+
+    .payouts section {
+        margin-top: 50px;
+    }
+
+    .payouts section.new-payout {
+        margin-top: 20px;
+    }
+
+    .payouts .action {
+        align-self: flex-start;
+    }
+
+    .payouts .total {
+        justify-content: flex-start;
+    }
+
+    .payouts .card-header {
+        padding: 10px;
+    }
+
+    .payouts .card-header-container {
+        align-items: start;
+    }
+
+    .payouts .card-header .date {
+        margin-right: 0;
+    }
+}
+
+
+/**
+ * Dark theme
+ *
+ */
+
+.dark .payouts .section-wrapper {
+	background: #191919;
+	box-shadow: none;
+}
+
+.dark .payouts .card-info input,
+.dark .payouts .card-info .input-group-text {
+	border-color: #394251;
+}
+
+.dark .payouts .card-info .input-group-text {
+	background-color: #24313f;
+}
+
+.dark .payouts .table .selected {
+    background-color: #272727;
+}
+
+.dark .payouts .table .selected ~ tr:not(.total-row) {
+    background-color: #272727;
+}
+
+.dark .payouts .table .selected ~ tr:hover,
+.dark .payouts .table .selected:hover {
+    background-color: #3c4d5f;
+}
+
+.dark .payouts .card-info .control-icon,
+.dark .payouts .accordion>.card>.card-header {
+	color: #FAFAFA;
+    background-color: #272727;
+}
+
+.dark .payouts .card-info .control-icon:hover {
+	background: #575656;
+}
+
+.dark .payouts .note {
+	color: #FFFFFF;
+}
+
+.dark .payouts .card-body,
+.dark .card {
+	color: #FAFAFA;
+	background-color: #191919;
+}
+
+.dark .payouts-wrapper .mode-buttons .btn {
+	color: #FAFAFA;
+}
+
+.dark .payouts-wrapper .mode-buttons .btn.active {
+	color: #3579F6;
+	background-color: #272727;
+}
+
+.dark .payouts .card-header {
+	border-color: #191919;
+}
+
+.dark .payouts .brief-info .text {
+	border-color: #394251;
+	background-color: #24313f;
+}
+
+.dark .payouts .brief-info .text-card {
+	background: none;
+    border: none;
+}
+
+.dark .payouts .table thead th {
+	background: none;
+	border-bottom-color: #272727;
+}
+
+.dark .table td, .dark .table th {
+	border-top-color: #272727;
+}
+
+.dark .payouts .run-payout {
+	border-color: #272727;
+}
+
+.dark .confirm-modal-content .text-disclaimer {
+	background-color: #333333;
+}
+
+.dark .payouts .alert-warning {
+	background: #403B2B;
+	border-color: #403B2B;
+	color: #CA9D37;
+}
+.dark .payouts .alert-info {
+	background: #353745;
+	border-color: #353745;
+	color: #fafafa;
+}
+
+.dark .payouts .alert-info i {
+	border-color: #fafafa;
+}
+
+/**
+ * Billing
+ *
+ */
+
+.payouts .billing-info {
+	display: flex;
+	gap: 16px;
+}
+
+.payouts .billing-info .billing-control-item {
+	display: flex;
+	min-width: 190px;
+	padding: 16px 24px;
+	gap: 4px;
+	border-radius: 10px;
+	background: #F6F6F7;
+}
+
+.payouts .billing-info .billing-control-item .count {
+	font-size: 18px;
+	font-weight: 800;
+}
+
+.payouts .billing-info .btn {
+	padding: 12px 30px;
+	border-radius: 40px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 18px
+}
+
+.payouts .amount-and-toggle {
+	min-width: 100px;
+	text-align: end;
+}
+
+.payouts .billing-buttons {
+	display: flex;
+	flex-direction: column;
+    gap: 8px;
+}
+
+.payouts .payouts-history.past-bills .billing-status-icon {
+	display: inline-block !important;
+	margin-right: 16px;
+	font-size: 18px;
+}
+
+.payouts .icon-completed {
+	color: #5EA782;
+}
+
+.payouts .icon-processing,
+.payouts .icon-review {
+	color: #dfaa00;
+}
+
+.payouts .icon-failure {
+    color: #ff1127;
+}
+
+.payouts .icon-reversed,
+.payouts .icon-resolved {
+	color: #8949a3;
+}
+
+.payouts .icon-canceled {
+	color: #717171;
+}
+
+.dark .payouts .billing-info .billing-control-item {
+	background: #272727;
+}
+
+@media (max-width: 767px) {
+	.payouts .amount-and-toggle {
+		text-align: start;
+	}
+
+	.payouts .payouts-history.past-bills .billing-status-icon {
+		margin-bottom: 16px;
+	}
+}
+
+
+/* Need to remove */
+
+.dark .billing {
+    background: #191919;
+    box-shadow: none;
+}
+
+.dark .billing .accordion>.card.payout-terms>.card-header {
+	background-color: #344862;
+	border-color: #344862;
+}
+
+.billing .section-wrapper {
+	padding: 24px 32px 24px 32px;
+	margin-top: 24px;
+	border-radius: 20px;
+	background: #FFF;
+	box-shadow: 0 4px 10px 0 rgba(235, 235, 235, 0.80);
+}
+
+.dark .billing .section-wrapper {
+	background: #283444;
+	box-shadow: none;
+}
+
+.billing .section-wrapper h3 {
+	margin-bottom: 40px;
+}
+
+.billing.billing-plan .badge {
+	border-radius: 8px;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	padding: 6px 10px;
+	width: 70%;
+}
+
+.billing.billing-plan .badge.badge-charge {
+	background-color: #E4ECFA;
+	color: #3579F6;
+	max-width: 210px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.dark .billing.billing-plan .badge.badge-charge {
+	background-color: #485365;
+	color: #5991F6;
+}
+
+.billing.billing-plan .badge-number {
+	background-color: #f6f7fa;
+	border: 1px solid #dde8ee;
+	color: #1b1e21;
+	min-width: 35px;
+	width: fit-content;
+}
+
+.dark .billing.billing-plan .badge-number {
+	background-color: #344862;
+	border-color: #344862;
+	color: #FFFFFF;
+}
+
+.billing.billing-plan .table {
+	margin-top: 0;
+}
+
+.billing.billing-plan .billing-icon {
+	color: #c0d2dc;
+}
+
+.billing .fw-bold {
+	font-size: 18px;
+}
+
+.billing .fw-bold .small {
+	font-size: 14px;
+	margin-left: 3px;
+}
+
+/* ----  Controls  ---- */
+
+.billing .controls {
+	padding: 0 5px 0 8px;
+	margin: 20px 0 0 0;
+	position: relative;
+	display: flex !important;
+	left: auto;
+	transform: none;
+	width: 100%;
+	bottom: auto;
+}
+
+.billing .info {
+    color: #98a6ad;
+    margin: 0 0 15px 15px;
+}
+
+.billing .info i.fas {
+    margin-right: 10px;
+}
+
+.billing .control-header {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    justify-content: flex-end;
+}
+
+.billing .control-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.billing .icon {
+    color: #ccc;
+    margin: 0 12px 0 0;
+}
+
+.billing .control-item .badge {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 400;
+    height: 32px;
+    padding: 8px 15px;
+}
+
+.billing .control-item .count {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 0 8px;
+}
+
+.dark .billing .control-item .badge.alert-primary {
+	background-color: #344862;
+	border-color: #344862;
+	color: #FFFFFF;
+}
+
+.billing .control-item .count-muted {
+    font-weight: 400;
+}
+
+.billing .control-header .text {
+    opacity: 0.8;
+}
+
+.billing .control-item .badge-highlight {
+	font-weight: 700;
+	padding: 8px 35px;
+}
+
+.dark .billing .control-item .badge-highlight {
+	border-color: #344862;
+	background-color: #344862;
+	color: #fff;
+}
+
+.billing .icon {
+    font-size: 22px;
+}
+
+.billing .form-control:focus {
+	border-color: #e9ecef;
+}
+
+.billing .controls .card,
+.billing .controls .wallet {
+    font-family: monospace;
+    font-size: 0.9rem;
+    width: 230px;
+    height: 32px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.billing .controls .card.iban {
+	width: 290px;
+}
+
+.dark .billing .controls input:disabled {
+	background-color: #344862;
+	border-color: #344862;
+}
+
+.billing .controls .wallet {
+    width: 320px;
+    font-size: 0.8rem;
+}
+
+.billing .controls .network {
+    font-family: monospace;
+    font-size: 0.8rem;
+    width: 70px;
+    height: 32px;
+    margin-right: 25px;
+    text-align: center;
+}
+
+.billing .controls .control-icon {
+    cursor: pointer;
+    color: #aaa;
+    margin: 0 8px;
+    width: 20px;
+}
+
+.billing .controls .icon-primary {
+    color: #007bff;
+}
+
+.billing .controls .icon-primary:hover {
+    color: #0069d9;
+}
+
+
+.billing .controls .control-icon.fa-check-circle {
+    color: #4cae4c;
+}
+
+.billing .controls .card-not-valid {
+    border-color: #f5c6cb;
+}
+
+
+/* ----  Grid  ---- */
+
+.billing .card {
+    border-bottom: none;
+    box-shadow: none;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+.dark .billing .card {
+	background-color: #344862;
+	border-color: #344862;
+}
+
+.billing .card {
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+}
+
+.billing .card {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+}
+
+.billing .card-header {
+    background: none;
+    border-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.billing .card-header:hover {
+    background-color: #00000013;
+}
+
+.billing .card-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.billing .card-header.collapsed {
+    border-radius: 15px;
+}
+
+.billing .card-header .toggle {
+    color: #bcc6cb;
+    margin-right: 30px;
+}
+
+.billing .card-header .toggle i {
+    transform: rotate(0deg);
+    transition: transform 100ms linear;
+}
+
+.billing .card-header.expanded .toggle i {
+    transform: rotate(90deg);
+    transition: transform 100ms linear;
+}
+
+.billing .card-header .badge,
+.billing .card-body .badge {
+    font-size: 0.7rem;
+    font-weight: normal;
+    margin-left: 30px;
+    margin-right: auto;
+    padding: 5px 15px;
+}
+
+.billing .card-header .badge {
+	width: 95px;
+}
+
+.billing .payout-terms .card-header-container {
+    justify-content: flex-start;
+}
+
+.billing .payout-terms .rc-slider-mark-text {
+    display: none;
+}
+
+.billing .payout-terms .card-header .toggle {
+    margin-right: 18px;
+}
+
+.billing .payout-terms {
+    border-color: #cce5ff;
+    border-radius: 8px !important;
+}
+
+.billing .payout-terms:last-child {
+    border-color: #cce5ff;
+}
+
+.dark .billing .payout-terms:last-child {
+	border-color: #344862;
+}
+
+.billing .payout-terms .card-header .toggle {
+    color: #004085;
+}
+
+.dark .billing .payout-terms .card-header .toggle {
+	color: #ccc;
+}
+
+.billing .accordion>.card.payout-terms>.card-header {
+    background-color: #cce5ff;
+    padding: 0.5rem 1.25rem;
+}
+
+.billing .badge-new {
+    color: #004085;
+    background-color: #cce5ff;
+    border: 1px solid #b8daff;
+}
+
+.billing .badge-pending,
+.billing .badge-processing,
+.billing .badge-review,
+.billing .badge-paused {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+}
+
+.billing .badge-completed {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.billing .badge-warning {
+	color: #5f5435;
+}
+
+.billing .badge-canceled, .badge-skipped, .badge-canceled {
+    background-color: #e5e5e6;
+    border: 1px solid #dcdbdb;
+    color: #1b1e21;
+}
+
+.billing .badge-hold, .billing .badge-failure {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.billing .badge-merged {
+	background-color: #dbdbed;
+	border-color: #c7c7df;
+}
+
+.dark .billing .badge-merged {
+	color: #474768;
+}
+
+.billing .badge-combined {
+	color: #2755a8;
+}
+
+.billing .badge-reversed, .billing .badge-return, .billing .badge-resolved {
+	color: #fff;
+	background-color: #9b59b6;
+	border-color: #8949a3;
+}
+
+.billing .card-header .date {
+    color: #98a6ad;
+    margin-right: 40px;
+}
+
+.billing .card-header .payout-id {
+    color: #bcc6cb;
+    margin-right: auto;
+}
+
+.billing .card-header .amount {
+    font-size: 0.85rem;
+    font-weight: 700;
+    min-width: 90px;
+    text-align: right;
+}
+
+.billing .brief-info {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    padding-left: 0.75rem;
+}
+
+.billing .brief-info .icon {
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-right: 12px;
+}
+
+.billing .brief-info .icon.fa-comment {
+    margin-right: 8px;
+}
+
+.billing .brief-info .title {
+    font-weight: 700;
+    margin-right: 25px;
+}
+
+.billing .brief-info .text-card {
+	background: #f6f6f6;
+	border: 1px solid #eee;
+	border-radius: 8px;
+	font-family: monospace, monospace;
+	font-size: 13px;
+	padding: 4px 15px;
+	text-align: center;
+	width: 200px;
+}
+
+.billing .brief-info .text-wallet {
+	min-width: 330px;
+	width: 100%;
+}
+
+.billing .brief-info .text-iban {
+	min-width: 270px;
+	width: 100%;
+}
+
+.billing .new-payout .brief-info {
+    margin-top: 0;
+}
+
+.billing .text-comment {
+    color: #999999;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.billing .action .btn {
+    height: 32px;
+    font-size: 0.8rem;
+    min-width: 90px;
+}
+
+.billing .note {
+    color: #999999;
+    font-size: 0.75rem;
+    margin-left: 0;
+}
+
+.dark .billing .note {
+	color: #FFFFFF;
+}
+
+.dark .billing .card-body {
+	color: #FFFFFF;
+	background-color: #233347;
+}
+
+.billing .note div > div {
+    display: flex;
+}
+
+.billing .note .col-half > div > span:first-child {
+    min-width: 90px;
+}
+
+.billing .note .col-half:last-child > div > span:last-child {
+    text-align: right;
+    width: 40px;
+}
+
+.billing .service-fee-muted {
+    font-size: 9px;
+    margin-left: 3px;
+}
+
+.billing .original-amount {
+    font-size: .7rem;
+    margin-right: 8px;
+}
+
+.billing .currency {
+    font-size: 80%;
+    margin-left: 4px;
+    opacity: 0.6;
+}
+
+.billing .original-amount .currency {
+    font-size: 90%;
+    margin-left: 1px;
+    opacity: 0.8;
+}
+
+.billing .original-amount .currency.prefix {
+    margin-left: 0;
+    margin-right: 1px;
+}
+
+
+
+/* ----  Table  ---- */
+
+.billing .table {
+    font-size: 0.8rem;
+    margin-top: 2rem;
+}
+
+.billing .table thead th {
+    background: none;
+    border-top: none;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.billing .table th:nth-child(2),
+.billing .table th:nth-child(3) {
+    min-width: 150px;
+}
+
+.billing .table th:nth-child(4) {
+    min-width: 120px;
+}
+
+.billing .table .selected {
+    background-color: #d4edda;
+}
+
+.billing .table .selected ~ tr:not(.total-row) {
+    background-color: rgba(212, 237, 218, 0.5);
+}
+
+.billing .table .selected ~ tr:hover {
+    background-color: #d4edda;
+}
+
+.billing .table .total-row {
+    font-weight: 700;
+}
+
+.billing .table .text-muted {
+    color: #afb5ba !important;
+}
+
+.admin-payouts .billing {
+    padding-bottom: 0;
+}
+
+.admin-payouts .payouts-completed .table td, .admin-payouts .payouts-completed .table th,
+.admin-payouts .payouts-canceled .table td, .admin-payouts .payouts-canceled .table th{
+    padding: 0.5rem 0.4rem;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.admin-payouts .payouts-completed .table td a,
+.admin-payouts .payouts-canceled .table td a {
+    display: inline-block;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    width: 150px;
+    white-space: nowrap;
+}
+
+.admin-payouts a.user-name {
+    color: #333;
+}
+
+.dark .admin-payouts a.user-name {
+    color: #FFFFFF;
+}
+
+
+@media (min-width: 767px) and (max-width: 1330px) {
+	.billing .table th:nth-child(2),
+	.billing .table th:nth-child(3) {
+		min-width: 100px;
+	}
+
+	.billing .table th:nth-child(4) {
+		min-width: 75px;
+	}
+}
+
+@media (max-width: 767px) {
+	.billing .controls .wallet {
+		width: 100%;
+	}
+}
+
+/**
+ * Mobile view
+ *
+ */
+
+@media (max-width: 575px) {
+	.billing {
+		padding: 24px;
+	}
+
+    .billing .controls {
+        flex-direction: column;
+        margin: 0 0 20px 0;
+    }
+
+    .billing .controls > div {
+        margin: 15px 0;
+    }
+
+    .billing .brief-info .title {
+        display: none;
+    }
+
+    .billing .new-payout .brief-info {
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .billing section {
+        margin-top: 50px;
+    }
+
+    .billing section.new-payout {
+        margin-top: 20px;
+    }
+
+    .billing .action {
+        align-self: flex-start;
+    }
+
+    .billing .total {
+        justify-content: flex-start;
+    }
+
+    .billing .card-header {
+        padding: 10px;
+    }
+
+    .billing .card-header-container {
+        align-items: start;
+    }
+
+    .billing .card-header .toggle {
+        margin-right: 15px;
+    }
+
+    .billing .card-header .date {
+        margin-right: 0;
+    }
+
+    .billing .card-header .badge {
+        margin: 0 10px;
+    }
+
+    .billing .card-header .payout-id {
+        font-size: 0.75rem;
+        margin: 5px 0 0 0;
+    }
+
+    .billing .disclaimer-note div > div {
+        margin-bottom: 10px;
+    }
+
+    .billing .disclaimer-note .col-half:last-child > div > span:last-child {
+        text-align: left;
+    }
+
+	.billing .controls #card {
+		width: auto;
+	}
+}
+
+
+/**
+ * Dark theme
+ *
+ */
+
+/* .dark .billing .card-header-container {
+    color: #007bff;
+} */
+
+.dark .billing .table .selected {
+    background-color: #3c4d5f;
+}
+
+.dark .billing .table .selected ~ tr:not(.total-row) {
+    background-color: #3c4d5f;
+}
+
+.dark .billing .table .selected ~ tr:hover {
+    background-color: #3c4d5f;
+}

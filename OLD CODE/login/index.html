@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <title>Вхід - Donatello</title>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Донателло - українська платформа донатів та регулярних підписок. Підтримка українських авторів, творців, блогерів. Підтримка українського медіа контенту.">
+<meta name="author" content="Донателло / Donatello">
+
+<meta property="og:url" content="https://donatello.to"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Донателло / Donatello"/>
+<meta property="og:description" content="Донателло - українська платформа донатів та регулярних підписок. Підтримка українських авторів, творців, блогерів. Підтримка українського медіа контенту."/>
+<meta property="og:image" content="/img/donatello_logo_fb_200x200.png"/>
+
+<link rel="manifest" href="/manifest.json">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="theme-color" content="#feffe1">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140316543-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-140316543-1');
+</script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"
+      integrity="sha512-XWTTruHZEYJsxV3W/lSXG1n3Q39YIWOstqvmFsdNEEQfHoZ6vm6E9GK2OrF6DSJSpIbRbi+Nn0WDPID9O7xB2Q=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.3.0/font-awesome-animation.min.css"
+      integrity="sha512-Po8rrCwchD03Wo+2ibHFielZ8luDAVoCyE9i6iFMPyn9+V1tIhGk5wl8iKC9/JfDah5Oe9nV8QzE8HHgjgzp3g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
+      integrity="sha512-QKC1UZ/ZHNgFzVKSAhV5v5j73eeL9EEN289eKAEFaAjgAiobVAnVv/AGuPbXsKl1dNoel3kNr6PYnSiTzVVBCw=="
+      crossorigin="anonymous"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;800&display=swap">
+
+    <!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/js/bootstrap.bundle.min.js"
+        integrity="sha512-9GacT4119eY3AcosfWtHMsT5JyZudrexyEVzTBWV3viP/YfB9e2pEy3N7WXL3SV6ASXpTU0vzzSxsbfsuUH4sQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    // Put email after page load (against mail robots)
+    $(document).ready(function () {
+		const e = 'hello' + '@' + 'donatello.to';
+
+        $('a.email-content').attr('href', `mailto:${e}`).text(e);
+    });
+</script>
+
+
+    <link rel="stylesheet" href="/shared/nav.css?ver=20250808_145414"/>
+    <link rel="stylesheet" href="/shared/main.css?ver=20250808_145414"/>
+    <link rel="stylesheet" href="/shared/animations.css?ver=20250808_145414"/>
+    <link rel="stylesheet" href="/login/login.css?ver=20250808_145414"/>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-light sticky-top py-2">
+
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img class="logo" src="/img/home-assets/donatello_logo.svg" width="161" height="40" alt="Донателло"/>
+        </a>
+        <div class="d-flex align-items-center">
+			<span class="theme-switcher">
+  <span id="lightTheme" class="light-theme"><i class="fa-solid fa-sun"></i></span>
+  <span id="darkTheme" class="dark-theme"><i class="fa-solid fa-moon"></i></span>
+</span>
+
+<style>
+  .dark .theme-switcher .light-theme {
+    background-color: var(--color-almost-dark-accent1);
+    color: var(--color-white);
+  }
+
+  .theme-switcher {
+	  display: inline-flex;
+	  height: 36px;
+	  margin-left: auto;
+	  margin-right: 20px;
+	  width: 72px;
+  }
+
+  .theme-switcher .light-theme,
+  .theme-switcher .dark-theme {
+    height: 36px;
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .theme-switcher .light-theme {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+  .theme-switcher .dark-theme {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .theme-switcher .light-theme i,
+  .theme-switcher .dark-theme i {
+    font-size: 18px;
+  }
+
+  .theme-switcher .light-theme.active,
+  .theme-switcher .dark-theme.active {
+    background-color: var(--color-accent);
+  }
+
+  .theme-switcher .light-theme,
+  .theme-switcher .dark-theme {
+    background-color: #ECECEC;
+  }
+
+  .theme-switcher .active i {
+    color: var(--color-accent3);
+  }
+</style>
+
+<script>
+  $( document ).ready(function() {
+    function lightThemeSwitcher () {
+      $('#darkTheme').removeClass('active');
+      $('body.dark').removeClass('dark');
+
+      $('#lightTheme').addClass('active');
+
+      localStorage.setItem('don-darkTheme', 'false');
+    };
+
+    function darkThemeSwitcher () {
+      $('#lightTheme').removeClass('active');
+      $('body').addClass('dark');
+
+      $('#darkTheme').addClass('active');
+
+      localStorage.setItem('don-darkTheme', 'true');
+    };
+
+    function setTheme () {
+      let theme = localStorage.getItem('don-darkTheme');
+
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'true' : 'false';
+        localStorage.setItem('don-darkTheme', theme);
+      }
+
+      if (theme === 'true') {
+        darkThemeSwitcher();
+      } else {
+        lightThemeSwitcher();
+      }
+    };
+
+    $('#lightTheme').on('click', lightThemeSwitcher);
+    $('#darkTheme').on('click', darkThemeSwitcher);
+
+    setTheme();
+  });
+</script>
+
+			<div class="nav-container">
+				<a class="btn btn-secondary ms-4" href="/">На головну</a>
+			</div>
+
+			<!-- Mobile view -->
+			<div class="burger-menu">
+				<input id="menu-toggle" type="checkbox"/>
+				<label class="menu-button-container" for="menu-toggle">
+					<div class="menu-button"></div>
+				</label>
+
+				<ul class="menu">
+					<li>
+						<a class="btn btn-secondary ms-4" href="/">На головну</a>
+					</li>
+					<hr>
+				</ul>
+			</div>
+        </div>
+    </div>
+</nav>
+
+
+<section class="container login position-relative">
+        <div class="main-column col-sm-12 col-lg-8 col-xl-6 mx-auto">
+            <div class="login-form">
+                <div class="module-header d-flex justify-content-center align-items-center text-center mb-4">
+                    <h3><span class="fa fa-sign-in-alt"></span> &nbsp; Вхід / Реєстрація</h3>
+                </div>
+
+                <div class="row text-center mb-2">
+                    <div class="col-md-4 col-sm-12">
+                        <a class="social-login" href="/auth/google">
+                            <img src="/img/logos/v2/logo-google.svg" alt="Google" class="social-icon" />
+                            <span class="social-login-text">Увійти з Google</span>
+                        </a>
+                    </div>
+
+					<div class="col-md-4 col-sm-12">
+                        <a class="social-login" href="/auth/youtube">
+                            <img src="/img/logos/v2/logo-youtube.svg" alt="YouTube" class="social-icon" />
+                            <span class="social-login-text">Увійти з YouTube</span>
+                        </a>
+                    </div>
+
+					<div class="col-md-4 col-sm-12">
+                        <a class="social-login" href="/auth/twitch">
+                            <img src="/img/logos/v2/logo-twitch.svg" alt="Twitch" class="social-icon" />
+                            <span class="social-login-text">Увійти з Twitch</span>
+                        </a>
+                    </div>
+
+					<div class="col-md-4 col-sm-12">
+                        <a class="social-login" href="/auth/discord">
+                            <img src="/img/logos/v2/logo-discord.svg" alt="Discord" class="social-icon" />
+                            <span class="social-login-text">Увійти з Discord</span>
+                        </a>
+                    </div>
+
+					<div class="col-md-4 col-sm-12">
+                        <a class="social-login" href="/auth/trovo">
+                            <img src="/img/logos/v2/logo-trovo.svg" alt="Trovo" class="social-icon trovo" />
+                            <span class="social-login-text">Увійти з Trovo</span>
+                        </a>
+                    </div>
+                </div>
+
+                
+
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="agreement" checked>
+                            <label class="form-check-label social-login-text agreement-login" for="agreement">
+                                Я погоджуюся з <a href="/terms">Умовами та правилами користуваннями сервісу</a>.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<img src="/img/cloud-login.svg" alt="Cloud" class="cloud-login-1 d-none d-lg-block" />
+		<img src="/img/cloud-login.svg" alt="Cloud" class="cloud-login-2 d-none d-lg-block" />
+		<img src="/img/cloud-login.svg" alt="Cloud" class="cloud-login-3 d-none d-lg-block" />
+		<img src="/img/cloud-login.svg" alt="Cloud" class="cloud-login-4 d-none d-lg-block" />
+
+</section>
+
+<script>
+    $(document).ready(function () {
+        $('a.social-login').on('click', function (e) {
+            const checked = $('input#agreement').prop('checked');
+
+            if (!checked) {
+                e.preventDefault();
+            }
+        });
+
+        if (localStorage.getItem('redirectionFrom')) {
+            // Set cookie to be valid for one minute to pass correct user type to backend
+            let date = new Date();
+            date.setTime(date.getTime()+(1*60*1000));
+            const expires = "; expires="+date.toGMTString();
+
+            document.cookie = "userRole=user"+expires+"; path=/";
+
+            $('.hide-container').hide();
+        }
+    });
+</script>
+
+<!-- Footer -->
+<footer class="footer bg-light">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3 mb-3 text-left">
+                <img class="logo" src="/img/home-assets/donatello_logo_secondary.svg" height="35" alt="Донателло"/>
+            </div>
+
+            <div class="col-md-4 mt-2 mb-3 text-left">
+                <ul class="footer-links">
+                    <li class="mr-4 mb-2"><a href="/about">Про нас</a></li>
+                    <li class="mr-4 mb-2"><a href="/individuals">Для авторів</a></li>
+                    <li class="mr-4 mb-2"><a href="/business">Для підприємців</a></li>
+                    <li class="mr-4 mb-2"><a href="/terms">Умови користування</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-5 mt-1 mb-3 footer-icons-container">
+                <ul class="list-inline footer-icons">
+                    <li class="list-inline-item item-icon mr-3">
+                        <a class="zoom-in" href="https://www.facebook.com/donatello.to"
+                           target="_blank" rel="noopener noreferrer"
+                           title="Facebook - сторінка Donatello">
+                            <i class="fab fa-facebook fa-fw"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item item-icon mr-3">
+                        <a class="zoom-in" href="https://discord.gg/donatello-498101952333479956"
+                           target="_blank" rel="noopener noreferrer"
+                           title="Discord - канал Donatello">
+                            <i class="fab fa-discord fa-fw"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item item-icon mr-3">
+                        <a class="zoom-in" href="https://twitter.com/donatello_to"
+                           target="_blank" rel="noopener noreferrer"
+                           title="Twitter - Donatello">
+                            <i class="fab fa-twitter fa-fw"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item item-icon mr-3">
+                        <a class="zoom-in" href="https://www.instagram.com/donatello.to/"
+                           target="_blank" rel="noopener noreferrer"
+                           title="Instagram - Donatello">
+                            <i class="fab fa-instagram fa-fw"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item item-icon mr-3">
+                        <a class="email-icon zoom-in">
+                            <i class="fa fa-envelope-square fa-fw"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-sm-6 h-100 my-auto footer-copyright">
+                <p class="text-muted mb-4 mb-lg-0">
+                    <span class="copyright" title="Донателло - українська платформа донатів, 2018 - 2025.">
+    &copy; <a href="/"><strong>
+        
+            Донателло
+        
+        </strong> &mdash;
+        
+            українська платформа донатів,
+         2018 - 2025.
+        </a>
+</span>
+
+                </p>
+            </div>
+            <div class="col-sm-6 h-100 my-auto footer-made-with-love text-right">
+                <p class="text-muted mb-4 mb-lg-0">
+                    Зроблено з <span class="zoom-in" title="любов'ю">💛</span> у Львові
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Put email after page load (against mail robots)
+        $(document).ready(function () {
+            const e = 'hello' + '@' + 'donatello.to';
+
+            $('a.email-icon').attr('href', `mailto:${e}`);
+        });
+    </script>
+</footer>
+
+
+
+</body>
+</html>

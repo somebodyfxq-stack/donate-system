@@ -1,0 +1,56 @@
+/* Start Modal */
+
+.modal-dialog-video {
+	max-width: 550px !important;
+}
+
+.modal-content {
+	border-radius: 30px !important;
+}
+
+.modal-header {
+	justify-content: center !important;
+	border-bottom: none !important;
+	padding-top: 25px !important;
+}
+
+.modal-footer.no-border {
+	border-top: none !important;
+	justify-content: center !important;
+}
+
+.imageMedia {
+	display: flex;
+	align-items: center;
+}
+
+.imageMedia,
+.soundMedia {
+	cursor: pointer;
+}
+
+.modal-title {
+	font-weight: 800;
+}
+
+.btn-close {
+	position: absolute;
+	top: 34px;
+	right: 34px;
+}
+
+.card-media {
+	padding: 1rem;
+}
+
+.record-voice-modal {
+	display: flex;
+	justify-content: space-between;
+};
+
+@media (max-width: 800px) {
+	.btn-secondary,
+	.modal-button {
+		width: 40% !important;
+	}
+}

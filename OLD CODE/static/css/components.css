@@ -1,0 +1,210 @@
+/**  src/app/css/components.css  **/
+
+/**
+ * Message
+ *
+ */
+
+.app-message {
+    background: #F9EDBE;
+    border: 1px solid #F0C36D;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.05);
+    color: #333;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 10px;
+    max-width: 400px;
+    padding: 5px 25px;
+    text-align: center;
+}
+
+.app-message .close-alert {
+    color: #ae8537;
+    cursor: pointer;
+    float: right;
+    margin-right: -17px;
+    margin-top: 3px;
+}
+
+.app-message.message-success {
+    background: #D9EDF7;
+    border-color: #8DC5DD;
+    color: #31708F;
+}
+
+.app-message.message-success .close-alert {
+    color: #3183B9;
+}
+
+
+
+/**
+ * Modals
+ *
+ */
+
+.widgets.modal-body {
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    height: 100%;
+    overflow: auto;
+}
+
+.dark .widgets.modal-body {
+	background: #262626;
+}
+
+.modal-dialog .modal-body {
+    font-size: 16px;
+}
+
+.modal-dialog .action-delete {
+    background: #ce8483;
+    color: #fff;
+}
+
+.modal-dialog .action-delete:hover, .modal-dialog .action-delete:focus {
+    background: #AF6F6E;
+}
+
+.modal-dialog .btn-group {
+    margin-left: 10px;
+}
+
+
+/**
+ * Page tabs menu
+ *
+ */
+
+.tabs-button-container .nav-tabs {
+	flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+	border-bottom: none;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.tabs-button-container .nav-tabs .nav-link {
+	min-width: fit-content;
+	padding-left: 0;
+	padding-right: 0;
+	margin-right: 20px;
+	font-weight: 600;
+	font-size: 14px;
+	color: #8D939C;
+	border: 1px solid transparent;
+	background-color: transparent;
+}
+
+.tabs-button-container .nav-tabs .nav-link.active {
+	border-radius: 0;
+	border-bottom: 2px solid #3579F6;
+	color: #3579F6;
+}
+
+
+/**
+ * Custom select
+ *
+ */
+
+.select-custom {
+    position: relative;
+    display: block;
+    min-width: 220px;
+    width: 100%;
+    max-width: 295px;
+}
+
+.select-head {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+	font-weight: 500;
+    line-height: 20px;
+	background: #F6F6F7;
+    color: #0A1830;
+    cursor: pointer;
+}
+
+.dark .select-head {
+	background: #272727;
+    color: #FAFAFA;
+}
+
+.select-head::after {
+    width: 10px;
+    height: 6px;
+    background: #FFF url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.50495 5.78413L0.205241 1.25827C-0.0684138 0.970375 -0.0684138 0.503596 0.205241 0.215836C0.478652 -0.0719461 0.922098 -0.071946 1.19549 0.215837L5.00007 4.22052L8.80452 0.215953C9.07805 -0.0718292 9.52145 -0.0718292 9.79486 0.215953C10.0684 0.503736 10.0684 0.970492 9.79486 1.25839L5.49508 5.78425C5.35831 5.92814 5.17925 6 5.00009 6C4.82085 6 4.64165 5.928 4.50495 5.78413Z' fill='%23000000'/%3E%3C/svg%3E%0A") no-repeat center / cover;
+    position: absolute;
+    right: 20px;
+    bottom: 50%;
+    transform: translateY(50%);
+    content: '';
+    display: block;
+    transition: .2s ease-in;
+}
+
+.dark .select-head::after {
+    background: #272727 url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.50495 5.78413L0.205241 1.25827C-0.0684138 0.970375 -0.0684138 0.503596 0.205241 0.215836C0.478652 -0.0719461 0.922098 -0.071946 1.19549 0.215837L5.00007 4.22052L8.80452 0.215953C9.07805 -0.0718292 9.52145 -0.0718292 9.79486 0.215953C10.0684 0.503736 10.0684 0.970492 9.79486 1.25839L5.49508 5.78425C5.35831 5.92814 5.17925 6 5.00009 6C4.82085 6 4.64165 5.928 4.50495 5.78413Z' fill='%23FAFAFA'/%3E%3C/svg%3E%0A") no-repeat center / cover;
+}
+
+.select-head.open::after {
+    transform: translateY(50%) rotate(180deg);
+}
+
+.select-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 40px 4px #E8E8E8;
+    border-radius: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+    z-index: 100;
+    margin: 0;
+    padding: 8px!important;
+    font-size: 14px;
+	color: #0A1830;
+    scrollbar-color: dark;
+    scrollbar-width: thin;
+    overscroll-behavior: contain;
+}
+
+.dark .select-list {
+	background: #272727;
+    color: #FAFAFA;
+	box-shadow: none;
+}
+
+.select-list .select-item {
+    position: relative;
+    padding: 8px;
+	border-radius: 10px;
+    cursor: pointer;
+    list-style-type: none;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+}
+
+.select-list .select-item:hover {
+    background-color: #F6F6F7;
+}
+
+.dark .select-list .select-item:hover {
+    background-color: #191919;
+}
+
+.select-list .select-item .check-mark {
+	font-size: 20px;
+}

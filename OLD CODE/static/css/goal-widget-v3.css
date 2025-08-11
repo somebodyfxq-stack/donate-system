@@ -1,0 +1,116 @@
+#widget-v3 {
+  display: flex;
+  justify-content: center;
+}
+
+#widget-v3 .progress-bar-container {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 30px;
+  background: #f6f6f7;
+  border-radius: 30px;
+}
+
+#widget-v3 .progress-bar-container.qr {
+	flex-direction: row;
+	align-items: center;
+	width: 500px;
+}
+
+#widget-v3 .progress-bar-container > h5 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 147%;
+  letter-spacing: -0.005em;
+  color: #0a1830;
+}
+
+#widget-v3 .progress-circle-wrapper {
+  position: relative;
+}
+
+#widget-v3 #svg {
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+}
+
+#widget-v3 #svg .circle-white {
+  stroke: #ffffff;
+  fill: transparent;
+  stroke-dasharray: 314;
+  stroke-dashoffset: 0;
+  stroke-width: 20px;
+}
+
+#widget-v3 #bar-v3 {
+  stroke: #367af6;
+  fill: transparent;
+  stroke-dasharray: 314;
+  stroke-dashoffset: 0;
+  stroke-width: 20px;
+  transform: rotate(-90deg);
+}
+
+#widget-v3 .progress-bar-sum {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+#widget-v3 .progress-bar-sum > span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: -0.005em;
+  color: #afb3bb;
+}
+
+#widget-v3 #text-v3 {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  background-color: #ffffff;
+  padding: 11px;
+  height: 35px;
+  border-radius: 30px;
+  transform: translate(-50%);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.005em;
+  color: #3579f6;
+  box-shadow: 0px 0px 40px 4px #e8e8e8;
+}
+
+#widget-v3 #collected-v3,
+#widget-v3 #collected-v3 + span {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 140%;
+  letter-spacing: -0.005em;
+  color: #3579f6;
+}
+
+#widget-v3 #goal-v3,
+#widget-v3 #goal-v3 + span {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: -0.005em;
+  color: #0a1830;
+}
+
+@media (max-width: 610px) {
+	#widget-v3 .progress-bar-container.qr {
+		flex-direction: column;
+	}
+}

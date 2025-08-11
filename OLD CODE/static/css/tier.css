@@ -1,0 +1,170 @@
+.tier .description {
+  min-height: 200px;
+}
+
+.tier .media-container-select {
+  margin-bottom: 10px;
+  height: 164px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #eaeaea;
+  border-radius: 5px;
+  line-height: 6.2;
+  overflow: hidden;
+}
+
+.dark .tier .media-container-select {
+	color: #000000;
+}
+
+.tier .media-container-select > div {
+  font-size: 12px;
+  line-height: 2;
+  padding: 10px;
+}
+
+.tier .media-container-select .animation {
+  /* height: 100px; */
+  width: 100%;
+  object-fit: contain;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tier-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #F6F6F7; */
+  /* width: 300px; */
+  height: auto;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.tier-card-content .name {
+  text-align: center;
+}
+
+.tier-card-content .img-container {
+	margin-bottom: 24px;
+}
+
+.tier-card-content .img-container,
+.tier-card-content img {
+  width: 100%;
+}
+
+.tier-card-content img {
+  object-fit: contain;
+}
+
+.subscription .tier-card-content img.large-image {
+  height: 185px;
+}
+
+.tier-card-content .name {
+  color: #0A1830;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.tier-card-content .price {
+  color: #0A1830;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.tier-card-content .month {
+  color: #8D939C;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.tier-card-content .preview-button {
+	border-radius: 40px;
+	min-width: 165px;
+	width: auto;
+	padding: 12px 30px;
+	margin-bottom: 20px;
+}
+
+.tier-card-content .description {
+	width: 100%;
+	word-wrap: break-word;
+	font-size: 14px;
+	font-weight: 500;
+	white-space: pre-wrap;
+}
+
+.tier-card-content .subscribers {
+	margin-bottom: 4px;
+	text-align: center;
+}
+
+.tier-card-content .subscribers span {
+	font-size: 14px;
+	font-weight: 500;
+	color: #6C7483;
+}
+
+.dark .rdtPicker {
+  background: #424242;
+}
+
+.tier.post {
+	padding: 20px 40px;
+}
+
+.post .poll .fas {
+  cursor: pointer;
+}
+
+.post .poll-row .fa-plus-circle {
+  display: none;
+}
+
+.post .poll-row:last-child .fa-plus-circle {
+  display: block;
+}
+
+.post .tag {
+  cursor: pointer;
+}
+
+.post .tags-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tier .discord-roles-wrapper .badge-dark {
+	padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tier .discord-roles-wrapper .role-color {
+	width: 20px;
+	height: 20px;
+	margin-right: 8px;
+	border-radius: 50%;
+}
+
+.tier .discord-roles-wrapper i {
+    font-size: 24px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.dark .tier-card-content .name,
+.dark .tier-card-content .price {
+	color: #FAFAFA;
+}
+
+

@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>
+        {start} / {end} {currency} ({percentage})
+    </title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"
+            integrity="sha512-74AKPNm8Tfd5E9c4otg7XNkIVfIe5ynON7wehpX/9Tv5VYcZvXZBAlcgOAjLHg6HeWyLujisAnle6+iKnyWd9Q=="
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+      integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g=="
+      crossorigin="anonymous"/>
+
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      crossorigin="anonymous"/>
+    <script src="/shared/helpers.js"></script>
+
+    <link rel="stylesheet" href="/widget/widget-goal.css?ver=20250808_145414" />
+    <link rel="stylesheet" href="/widget/goal-widget-v3.css?ver=20250808_145414" />
+	<link rel="stylesheet" href="/widget/goal-widget-v4.css?ver=20250808_145414" />
+	<link rel="stylesheet" href="/widget/goal-widget-v6.css?ver=20250808_145414" />
+	<link rel="stylesheet" href="/widget/goal-widget-v7.css?ver=20250808_145414" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140316543-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-140316543-1');
+</script>
+
+</head>
+
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+        <script src="/shared/Fonts.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                let widgetConfig = {"widgetLabel":"243234","widgetDescription":"","widgetName":"{start} / {end} {currency} ({percentage})","widgetCollected":"","widgetGoal":"","startAmount":0,"donatedAmount":0,"goalAmount":5000,"fontSize":5,"height":80,"borderWidth":5,"borderRadius":25,"gotAmountBorderRadius":0,"gradientAngle":90,"link":"","doubleAmountGoal":false,"textPosition":"inside","textAlignment":"center","outerGradient":false,"keepCounting":true,"keepCountingPercentage":true,"gradient":false,"gradientAnimation":"none","hideMinMaxNumbers":true,"isNinetyDegree":false,"showOnDonationPage":true,"hideMinMaxNumbersDonatePage":false,"widgetCurrency":"UAH","addSubscriptionAmount":false,"showCurrencySign":true,"gifSeparatorAbove":false,"showAmountWithoutFee":false,"multiGoalItems":{"items":[{"name":"{amount}","amount":0}],"gradientColor":{"r":"50","g":"50","b":"50","a":"0.5"},"textPosition":"right","padding":0,"gradientStart":50,"borderRadius":0,"borderWidth":0,"borderColor":{"r":"50","g":"50","b":"50","a":"1"}},"multiGoal":false,"color":{"r":"53","g":"121","b":"246","a":"1"},"colorFont":{"r":"0","g":"0","b":"0","a":"1"},"colorFontNumbers":{"r":"255","g":"255","b":"255","a":"1"},"colorBorder":{"r":"0","g":"0","b":"0","a":"1"},"colorText":{"fontFamily":29,"fontSize":20,"isBold":false,"isItalic":false,"isUnderlined":false,"letterSpacing":0,"wordSpacing":0,"fontAnimation":"none","fontAnimationDuration":"2.5","infiniteAnimation":false,"color":{"r":"255","g":"255","b":"255","a":"1"},"colorShadow":"","colorShadowWidth":"0","textAlign":"center","stroke":"3","colorStroke":{"r":0,"g":0,"b":0,"a":1},"colorTextBorder":{"r":"255","g":"255","b":"255","a":"1"},"colorTextBorderWidth":"0","gradient":false,"gradientOne":{"r":"206","g":"204","b":"25","a":"1"},"gradientTwo":{"r":"206","g":"204","b":"25","a":"1"},"gradientAngle":90},"goalWidgetType":"1","diagramSettings":{"qrCode":false,"replacingDiagramWithQrCode":false,"gradient":false,"gradientAngle":0,"gradientAnimation":"none","colorBackground":{"r":"246","g":"246","b":"247","a":"1"},"textWidgetNameAndGoal":{"fontFamily":5,"fontSize":18,"isBold":false,"isItalic":false,"isUnderlined":false,"letterSpacing":0,"wordSpacing":0,"fontAnimation":"none","fontAnimationDuration":"2.5","infiniteAnimation":false,"color":{"r":"10","g":"24","b":"48","a":"1"},"colorShadow":"","colorShadowWidth":"0","textAlign":"center","stroke":0,"colorStroke":"2","colorTextBorder":{"r":"206","g":"204","b":"25","a":"1"},"colorTextBorderWidth":"0","gradient":false,"gradientOne":{"r":"206","g":"204","b":"25","a":"1"},"gradientTwo":{"r":"206","g":"204","b":"25","a":"1"},"gradientAngle":90},"textGotAmountAndPercentage":{"fontFamily":5,"fontSize":30,"isBold":false,"isItalic":false,"isUnderlined":false,"letterSpacing":0,"wordSpacing":0,"fontAnimation":"none","fontAnimationDuration":"2.5","infiniteAnimation":false,"color":{"r":"53","g":"121","b":"246","a":"1"},"colorShadow":"","colorShadowWidth":"0","textAlign":"center","stroke":0,"colorStroke":"2","colorTextBorder":{"r":"206","g":"204","b":"25","a":"1"},"colorTextBorderWidth":"0","gradient":false,"gradientOne":{"r":"206","g":"204","b":"25","a":"1"},"gradientTwo":{"r":"206","g":"204","b":"25","a":"1"},"gradientAngle":90},"colorGoalLine":{"r":"54","g":"122","b":"246","a":"1"},"innerColorGoalLine":{"r":"175","g":"179","b":"187","a":"1"},"colorLabel":{"r":"175","g":"179","b":"187","a":"1"},"colorDivider":{"r":"175","g":"179","b":"187","a":"1"},"colorPercentageAndShadow":{"r":"255","g":"255","b":"255","a":"1"}},"widgetStatus":"active","progressBarSettings":{"qrCode":false,"gradient":false,"gradientAngle":90,"gradientAnimation":"none","progressBarColor":{"r":"54","g":"122","b":"246","a":"1"},"colorBackground":{"r":"246","g":"246","b":"247","a":"1"},"colorLabel":{"r":"175","g":"179","b":"187","a":"1"},"turnOffProgressBarShadow":false,"borderRadius":10,"gotAmountBorderRadius":10,"textWidgetNameAndGoal":{"fontFamily":5,"fontSize":18,"isBold":false,"isItalic":false,"isUnderlined":false,"letterSpacing":0,"wordSpacing":0,"fontAnimation":"none","fontAnimationDuration":"2.5","infiniteAnimation":false,"color":{"r":"10","g":"24","b":"48","a":"1"},"colorShadow":"","colorShadowWidth":"0","textAlign":"center","stroke":0,"colorStroke":"2","colorTextBorder":{"r":"206","g":"204","b":"25","a":"1"},"colorTextBorderWidth":"0","gradient":false,"gradientOne":{"r":"206","g":"204","b":"25","a":"1"},"gradientTwo":{"r":"206","g":"204","b":"25","a":"1"},"gradientAngle":90},"textGotAmount":{"fontFamily":5,"fontSize":30,"isBold":false,"isItalic":false,"isUnderlined":false,"letterSpacing":0,"wordSpacing":0,"fontAnimation":"none","fontAnimationDuration":"2.5","infiniteAnimation":false,"color":{"r":"255","g":"255","b":"255","a":"1"},"colorShadow":"","colorShadowWidth":"0","textAlign":"center","stroke":0,"colorStroke":"2","colorTextBorder":{"r":"206","g":"204","b":"25","a":"1"},"colorTextBorderWidth":"0","gradient":false,"gradientOne":{"r":"206","g":"204","b":"25","a":"1"},"gradientTwo":{"r":"206","g":"204","b":"25","a":"1"},"gradientAngle":90}},"imageQrCode":false,"urlName":"243234","gradientColors":[{"r":244,"g":37,"b":243,"a":1},{"r":37,"g":199,"b":255,"a":1},{"r":223,"g":245,"b":11,"a":1}],"removable":true,"presetId":"689a2068a4b051aa8123e813","twitchId":"837411988","youtubeApiKey":"AIzaSyCwIlsaymGfukFGqDYSvrSDYJ9WWnVViPQ","yt":{"client_secret":"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"},"readAllText":false};
+                const userId = '63bac0364bd1c609c619d170';
+                const widgetId = '689a2088a4b051aa8123f768';
+				const hasPbEnvelopeConfig = '' === 'true';
+
+                const CURRENCY = {
+                    UAH: '₴',
+                    USD: '$',
+                    EUR: '€',
+					USDT: 'USDT'
+                };
+
+                let { color, colorFont, colorText, colorFontNumbers, textAnimation, goalWidgetType } = widgetConfig;
+
+                let prevCopyAmount = '';
+                let createAnimation = false;
+                let socket = null;
+
+                if (widgetConfig.isNinetyDegree) {
+                    $('.element').hide();
+                    $('.widget-rotated').show();
+                } else {
+                    $('.element').show();
+                    $('.widget-rotated').hide();
+                }
+
+                createTextDecoration(colorText);
+
+                if (window.location.pathname.indexOf('/preview') !== -1) {
+                    window.addEventListener('storage', function (e) {
+                        buildDataWidget();
+                    });
+                }
+
+                function setDiagramAnimation(data) {
+					const gotAmountAndPercentageFontAnimationDuration = widgetConfig.diagramSettings.textGotAmountAndPercentage.fontAnimationDuration;
+					const widgetNameAndGoalFontAnimationDuration = widgetConfig.diagramSettings.textWidgetNameAndGoal.fontAnimationDuration;
+
+					const createAnimateTransform = () => {
+						const animateTransform = document.createElementNS('http://www.w3.org/2000/svg', 'animateTransform');
+						animateTransform.setAttribute('attributeName', 'gradientTransform');
+						animateTransform.setAttribute('type', 'rotate');
+						animateTransform.setAttribute('from', '0');
+						animateTransform.setAttribute('to', '360');
+						animateTransform.setAttribute('dur', '5s');
+						animateTransform.setAttribute('repeatCount', 'indefinite');
+
+						return animateTransform;
+					};
+
+					if (prevCopyAmount !== data.donatedAmount && data.diagramSettings.gradientAnimation === 'onDonate') {
+						const animateTransform = createAnimateTransform();
+						$('#linearColors').append(animateTransform);
+
+						setTimeout(() => {
+							$(animateTransform).remove();
+						}, 5000);
+					} else if (data.diagramSettings.gradientAnimation === 'always') {
+						const existingAnimateTransform = $('#linearColors').find('animateTransform');
+
+						if (existingAnimateTransform.length === 0) {
+							const animateTransform = createAnimateTransform();
+							$('#linearColors').append(animateTransform);
+						}
+					}
+
+                    if (data.diagramSettings.textGotAmountAndPercentage) {
+                        const textAnimation = data.diagramSettings.textGotAmountAndPercentage.textAnimation;
+                        const fontAnimation = data.diagramSettings.textGotAmountAndPercentage.fontAnimation;
+
+                        if (textAnimation === 'always') {
+                            $('.widget-title').add('.goal-container').addClass(`animate__animated animate__${fontAnimation} always`);
+
+							$('.widget-title').add('.goal-container').css({
+								"animation-duration": `${widgetNameAndGoalFontAnimationDuration || 2.5}s`
+							});
+                        } else if (textAnimation === 'onDonate' && prevCopyAmount !== data.donatedAmount) {
+                            $('.widget-title').add('.goal-container').removeClass(`animate__animated animate__${fontAnimation}`);
+
+                            setTimeout(() => {
+                                $('.widget-title').add('.goal-container').addClass(`animate__animated animate__${fontAnimation}`);
+
+								$('.widget-title').add('.goal-container').css({
+									"animation-duration": `${widgetNameAndGoalFontAnimationDuration || 2.5}s`
+								});
+                            }, 500)
+                        }
+                    }
+
+                    if (data.diagramSettings.textWidgetNameAndGoal) {
+                        const textAnimation = data.diagramSettings.textWidgetNameAndGoal.textAnimation;
+                        const fontAnimation = data.diagramSettings.textWidgetNameAndGoal.fontAnimation;
+
+                        if (textAnimation === 'always') {
+							$('.collected-container').add('#text-v3 span').add('#percentages-v6-2 span').addClass(`animate__animated animate__${fontAnimation} always`);
+							$('.collected-container').add('#text-v3 span').add('#percentages-v6-2 span').css({
+								"animation-duration": `${gotAmountAndPercentageFontAnimationDuration || 2.5}s`
+							});
+                        } else if (textAnimation === 'onDonate' && prevCopyAmount !== data.donatedAmount) {
+							$('.collected-container').add('#text-v3 span').add('#percentages-v6-2 span').removeClass(`animate__animated animate__${fontAnimation}`);
+
+                            setTimeout(() => {
+                                $('.collected-container').add('#text-v3 span').add('#percentages-v6-2 span').addClass(`animate__animated animate__${fontAnimation}`);
+								$('.collected-container').add('#text-v3 span').add('#percentages-v6-2 span').css({
+									"animation-duration": `${gotAmountAndPercentageFontAnimationDuration || 2.5}s`
+								});
+                            }, 500)
+                        }
+                    }
+                }
+
+				function setProgressBarAnimation(data) {
+					const gradientAnimation = data.progressBarSettings.gradientAnimation;
+					const textGotAmountAnimation = data.progressBarSettings.textGotAmount.textAnimation;
+					const textWidgetNameAndGoalAnimation = data.progressBarSettings.textWidgetNameAndGoal.textAnimation;
+					const fontWidgetNameAndGoalAnimation = data.progressBarSettings.textWidgetNameAndGoal.fontAnimation;
+					const fontGotAmountAnimation = data.progressBarSettings.textGotAmount.fontAnimation;
+
+					const nameAndGoalFontAnimationDuration = widgetConfig.progressBarSettings.textWidgetNameAndGoal.fontAnimationDuration;
+					const gotAmountFontAnimationDuration = widgetConfig.progressBarSettings.textGotAmount.fontAnimationDuration;
+
+					if (prevCopyAmount !== data.donatedAmount && gradientAnimation === 'onDonate') {
+						$("#progress-v7").addClass('gradient-animation');
+						$("#progress-v4-2").addClass('gradient-animation');
+					} else if (gradientAnimation === 'onDonate') {
+						$("#progress-v7").removeClass('gradient-animation');
+						$("#progress-v4-2").removeClass('gradient-animation');
+					}
+
+					if (textGotAmountAnimation === 'always') {
+						$(('#text-v7')).add("#text-v4-2").add("#collected-v4-2").add("#collected-v4-2-currency").addClass(`animate__animated animate__${fontGotAmountAnimation} always`);
+						$(('#text-v7')).add("#text-v4-2").add("#collected-v4-2").add("#collected-v4-2-currency").css({
+							"animation-duration": `${gotAmountFontAnimationDuration || 2.5}s`
+						});
+					} else if (textGotAmountAnimation === 'onDonate' && prevCopyAmount !== data.donatedAmount) {
+						$(('#text-v7')).add("#text-v4-2").add("#collected-v4-2").add("#collected-v4-2-currency").removeClass(`animate__animated animate__${fontGotAmountAnimation}`);
+
+						setTimeout(() => {
+							$(('#text-v7')).add("#text-v4-2").add("#collected-v4-2").add("#collected-v4-2-currency").addClass(`animate__animated animate__${fontGotAmountAnimation}`);
+
+							$(('#text-v7')).add("#text-v4-2").add("#collected-v4-2").add("#collected-v4-2-currency").css({
+								"animation-duration": `${gotAmountFontAnimationDuration || 2.5}s`
+							});
+						}, 500)
+					}
+
+					if (textWidgetNameAndGoalAnimation === 'always') {
+						$('#widget-v7 h5').add('#widget-v7 .goal').add("#goal-v4-2").add("#goal-v4-2-currency").addClass(`animate__animated animate__${fontWidgetNameAndGoalAnimation} always`);
+
+						$('#widget-v7 h5').add('#widget-v7 .goal').add("#goal-v4-2").add("#goal-v4-2-currency").css({
+                            "animation-duration": `${nameAndGoalFontAnimationDuration || 2.5}s`
+                        });
+					} else if (textWidgetNameAndGoalAnimation === 'onDonate' && prevCopyAmount !== data.donatedAmount) {
+						$('#widget-v7 h5').add('#widget-v7 .goal').add("#goal-v4-2").add("#goal-v4-2-currency").removeClass(`animate__animated animate__${fontWidgetNameAndGoalAnimation}`);
+
+						setTimeout(() => {
+							$('#widget-v7 h5').add('#widget-v7 .goal').add("#goal-v4-2").add("#goal-v4-2-currency").addClass(`animate__animated animate__${fontWidgetNameAndGoalAnimation}`);
+
+							$('#widget-v7 h5').add('#widget-v7 .goal').add("#goal-v4-2").add("#goal-v4-2-currency").css({
+								"animation-duration": `${nameAndGoalFontAnimationDuration || 2.5}s`
+							});
+						}, 500)
+					}
+				}
+
+                function updateWidget(data, socketEmit) {
+                    // to know if new donate arrived
+                    if (!data) return;
+
+                    if (prevCopyAmount === data.donatedAmount) return;
+
+                    if (goalWidgetType === "2" || goalWidgetType === "4") {
+                        setDiagramAnimation(data);
+                    } else if (goalWidgetType === "3" || goalWidgetType === "5") {
+						setProgressBarAnimation(data);
+					} else {
+                        if (prevCopyAmount !== data.donatedAmount && data.gradientAnimation === 'onDonate') {
+                            $('.got').addClass('gradient-animation');
+                        } else if (data.gradientAnimation === 'onDonate') {
+                            $('.got').removeClass('gradient-animation');
+                        }
+
+                        if (prevCopyAmount !== data.donatedAmount && data.textAnimation === 'onDonate') {
+                            $('.text-header').addClass(`animate__animated animate__${colorText.fontAnimation} ${textAnimation}`);
+							$('.text-header').css({"animation-duration": `${colorText.fontAnimationDuration || 2.5}s`});
+                        } else if (data.textAnimation === 'onDonate') {
+                            $('.text-header').removeClass(`animate__${colorText.fontAnimation} ${data.textAnimation}`);
+                        }
+                    }
+
+					if (prevCopyAmount !== data.donatedAmount) {
+						const donate = data.donatedAmount - prevCopyAmount;
+						const donationId = Date.now();
+
+						$("#amount-received").append(`
+							<div class="amount-received" id="donation-${donationId}"><span>+${parseInt(donate, 10)}</span></div>
+						`);
+
+						$("#confetti").append(`
+							<div class="confetti" id="confetti-${donationId}">
+								<img src="/img/confetti.gif" alt="Confetti" />
+							</div>
+						`);
+
+						setTimeout(() => {
+							if (data.donatedAmount < data.goalAmount) {
+								$("#confetti").find(`#confetti-${donationId}`).remove();
+							}
+
+							$("#amount-received").find(`#donation-${donationId}`).remove();
+						}, 5000);
+					}
+
+                    prevCopyAmount = data.donatedAmount;
+
+                    if (window.location.pathname.indexOf('/preview') !== -1) {
+                        //preview purpose
+                        if (goalWidgetType === "2") {
+                            buildDiagramV3Widget(data);
+                        } else if (goalWidgetType === "3") {
+							buildProgressBarWidget(data);
+						} else if (goalWidgetType === "4") {
+							buildDiagramV6Widget(data);
+						} else if (goalWidgetType === "5") {
+							buildProgressBarV4Widget(data);
+						} else {
+                            buildDefaultWidget(data);
+                        }
+                    } else {
+                        !socketEmit && setTimeout(() => {
+                            getWidgetData();
+                        }, 120000);
+                        if (goalWidgetType === "2") {
+                            buildDiagramV3Widget(data);
+                        } else if (goalWidgetType === "3") {
+							buildProgressBarWidget(data);
+						} else if (goalWidgetType === "4") {
+							buildDiagramV6Widget(data);
+						} else if (goalWidgetType === "5") {
+							buildProgressBarV4Widget(data);
+						} else {
+                            buildDefaultWidget(data);
+                        }
+                    }
+                }
+
+                function initSocket() {
+					if (hasPbEnvelopeConfig) {
+						console.log(`Skip init socket for goal widget for pb envelope`);
+						return;
+                    }
+
+                    socket = helpers.buildSocket();
+
+                    if (socket) {
+                        // Listen websocket event as userid
+                        socket.on([widgetId], message => {
+                            // not sure if this is useful since we listening widgetId
+                            if (userId === message.userId && widgetId === message.widgetId) {
+                                updateWidget(message.goalWidgetData, true);
+                            }
+                        });
+                    }
+                }
+
+                function getWidgetData() {
+                    let href = window.location.href.split('?');
+                    href = href[0].replace('/preview', '');
+
+                    const widgetUrl = `${href}/info`;
+                    $.ajax({
+                        url: widgetUrl,
+                        type: 'GET',
+                        contentType: 'application/json; charset=UTF-8',
+                        success: (data) => updateWidget(data, false),
+                        error: function (err) {
+                            setTimeout(() => {
+                                getWidgetData();
+                            }, 30000);
+                        }
+                    });
+                }
+
+                function buildDataWidget() {
+                    widgetConfig = JSON.parse(localStorage.getItem('widgetGoal'));
+
+                    if (!widgetConfig.donatedAmount) {
+                        widgetConfig.donatedAmount = widgetConfig.goalAmount/3;
+                    }
+
+                    color = widgetConfig.color;
+                    colorFont = widgetConfig.colorFont;
+                    colorText = widgetConfig.colorText;
+                    colorFontNumbers = widgetConfig.colorFontNumbers;
+
+                    $('.imageDivider').attr('style', '');
+                    $('.got').attr('style', '');
+                    $('.left').attr('style', '');
+
+                    createTextDecoration(colorText);
+                    if (goalWidgetType === "2") {
+                        buildDiagramV3Widget(widgetConfig);
+                    } else if (goalWidgetType === "4") {
+						buildDiagramV6Widget(widgetConfig);
+					} else {
+                        buildDefaultWidget(widgetConfig);
+                    }
+                }
+
+                function createTextDecoration(colorText) {
+                    $('.text-header').addClass(`animate__animated animate__${colorText.fontAnimation} ${textAnimation}`);
+                    $('.text-header').css({
+                        'textShadow': `rgba(${colorText.colorShadow.r},${colorText.colorShadow.g},${colorText.colorShadow.b},${colorText.colorShadow.a}) 0px 0px ${colorText.colorShadowWidth}px`,
+						'animation-duration': `${colorText.fontAnimationDuration || 2.5}s`
+                    });
+                }
+
+                function getGotWidth(data, percentageWidth) {
+                    if (widgetConfig.isNinetyDegree) {
+                        return '100%';
+                    }
+
+                    if (data.gradient) {
+                        return data.outerGradient ? `${percentageWidth}%` : '100%';
+                    }
+
+                    return `${percentageWidth}%`;
+                }
+
+                function buildGradient(data, percentageWidth) {
+                    let gradientParts = [];
+                    let gradientPersentage = {
+                        small: ['0%', '100%'],
+                        big: ['0%', '50%', '100%']
+                    };
+                    let gradientSize = data.gradientColors.length === 3 ? 'big' : 'small';
+
+                    data.gradientColors.map((c, i) => {
+                        gradientParts.push(`rgba(${c.r}, ${c.g}, ${c.b}) ${gradientPersentage[gradientSize][i]}`);
+                    });
+
+                    $('.got').css({
+                        'background': `linear-gradient(${data.gradientAngle || 90}deg, ${gradientParts.join()})`,
+                    });
+
+                    if (data.gradientAnimation === 'always') {
+                        $('.got').addClass('gradient-animation');
+                    } else if (data.gradientAnimation === 'none') {
+                        $('.got').removeClass('gradient-animation');
+                    }
+                }
+
+                function animateNumbers(name, prevNumber, addon) {
+                    const $counter = $(name);
+                    $counter.each(function () {
+                        $counter.prop('Counter', parseInt(prevNumber)).animate({
+                            Counter: $counter.text()
+                        }, {
+                            duration: 1000,
+                            easing: 'swing',
+                            step: function (now) {
+                                if (addon) {
+                                    $counter.text(Number(parseFloat(now).toFixed(2)) + addon);
+                                } else {
+                                    $counter.text(Number(Math.ceil(now)).toLocaleString('UA-ua'));
+                                }
+                            }
+                        });
+                    });
+                }
+
+                function buildDiagramV3Widget(data) {
+                    const startAmount = parseInt(data.startAmount, 10) || 0;
+                    const goalAmount = parseInt(data.goalAmount, 10) || 1;
+                    let donatedAmount = parseInt(data.donatedAmount, 10) || 0;
+
+                    let label = data.widgetName;
+                    let percentage = (startAmount + donatedAmount) * 100 / goalAmount;
+
+                    if (data.widgetCompletedText && goalAmount < donatedAmount) {
+                        label = data.widgetCompletedText;
+                    }
+
+                    let number = percentage % 1 ? 2 : 0;
+                    label = label.replace('{percentage}', percentage.toFixed(number) + '%');
+                    label = label.replace('{start}', startAmount + donatedAmount);
+                    label = label.replace('{end}', goalAmount);
+					label = label.replace(/{currency}/g, widgetConfig.showCurrencySign ? (CURRENCY[widgetConfig.widgetCurrency] || CURRENCY.UAH) : '');
+
+                    if (!data.keepCountingPercentage && goalAmount < donatedAmount) {
+                        percentage = 100;
+                    }
+
+                    if (!data.keepCounting && goalAmount < donatedAmount) {
+                        donatedAmount = goalAmount;
+                    }
+
+                    const innerCircleV3 = document.getElementById("bar-inner-circle-v3");
+                    const circleV3 = document.getElementById("bar-v3");
+					const linearColorsFirst = document.getElementById("linearColorsFirst");
+					const linearColorsSecond = document.getElementById("linearColorsSecond");
+					const linearColorsThird = document.getElementById("linearColorsThird");
+
+                    if (circleV3 && innerCircleV3) {
+                        let circleWidth = donatedAmount;
+
+                        if (donatedAmount >= goalAmount) {
+                            circleWidth = goalAmount
+                        }
+
+                        const { colorGoalLine, innerColorGoalLine, colorBackground, textWidgetNameAndGoal,
+                            colorPercentageAndShadow, textGotAmountAndPercentage, colorLabel, colorDivider, gradientColors } = data.diagramSettings;
+
+						const gradientColorFirst = gradientColors && `rgb(${gradientColors[0].r} ${gradientColors[0].g} ${gradientColors[0].b} / ${gradientColors[0].a})`;
+						const gradientColorSecond = gradientColors && `rgb(${gradientColors[1].r} ${gradientColors[1].g} ${gradientColors[1].b} / ${gradientColors[1].a})`;
+						const gradientColorThird = gradientColors && gradientColors.length === 3 ? `rgb(${gradientColors[2].r} ${gradientColors[2].g} ${gradientColors[2].b} / ${gradientColors[2].a})` : '';
+
+						const prevCollected = $('#collected-v3').text();
+                        $('#collected-v3').text(startAmount + donatedAmount);
+
+                        const prevPercentage = $('#text-v3 span').text();
+                        $('#text-v3 span').text(percentage+'%');
+
+                        $('#goal-v3').text(goalAmount.toLocaleString('UA-ua'));
+                        $('.widget-title').text(label);
+
+						if (data.widgetCollected) {
+							$('#widget-collected').text(data.widgetCollected);
+						}
+
+						if (data.widgetGoal) {
+							$('#widget-goal').text(data.widgetGoal);
+						}
+
+                        // replace to pass correct number - .toLocaleString('UA-ua') adds comma to it.
+                        animateNumbers('#collected-v3', prevCollected.replace(',', ''), '');
+                        animateNumbers('#text-v3 span', prevPercentage, '%');
+
+                        $("#collected-v3").add("#collected-span-v3").add("#text-v3 span").add(".got").add(".amount-received span").css({
+                            'color': `rgb(${textGotAmountAndPercentage.color.r} ${textGotAmountAndPercentage.color.g} ${textGotAmountAndPercentage.color.b} / ${textGotAmountAndPercentage.color.a})`,
+                            'fontFamily': FONTS[textGotAmountAndPercentage.fontFamily].id,
+                            'letterSpacing': textGotAmountAndPercentage.letterSpacing + 'px',
+                            'wordSpacing': textGotAmountAndPercentage.wordSpacing + 'px',
+                            'fontWeight': !textGotAmountAndPercentage.isBold ? 100 : 'bold',
+                            'fontStyle': !textGotAmountAndPercentage.isItalic ? 'normal' : 'italic',
+                            'textDecoration': !textGotAmountAndPercentage.isUnderlined ? '' : 'underline',
+                            'textShadow': `rgba( ${textGotAmountAndPercentage.colorShadow.r},
+                                ${textGotAmountAndPercentage.colorShadow.g},
+                                ${textGotAmountAndPercentage.colorShadow.b},
+                                ${textGotAmountAndPercentage.colorShadow.a}) 0px 0px ${textGotAmountAndPercentage.colorShadowWidth}px`,
+                            ...(textGotAmountAndPercentage.stroke !== '0' && textGotAmountAndPercentage.colorStroke && {
+                                backgroundColor: `rgba(${textGotAmountAndPercentage.colorStroke.r},${textGotAmountAndPercentage.colorStroke.g},${textGotAmountAndPercentage.colorStroke.b},${textGotAmountAndPercentage.colorStroke.a})`,
+                                'WebkitTextStroke': `${textGotAmountAndPercentage.stroke}px transparent`,
+                                '-webkit-background-clip': `text`,
+                            })
+                        });
+
+                        $(".widget-title").add("#goal-v3").add("#goal-span-v3").css({
+                            'color': `rgb(${textWidgetNameAndGoal.color.r} ${textWidgetNameAndGoal.color.g} ${textWidgetNameAndGoal.color.b} / ${textWidgetNameAndGoal.color.a})`,
+                            'fontFamily': FONTS[textWidgetNameAndGoal.fontFamily].id,
+                            'letterSpacing': textWidgetNameAndGoal.letterSpacing + 'px',
+                            'wordSpacing': textWidgetNameAndGoal.wordSpacing + 'px',
+                            'fontWeight': !textWidgetNameAndGoal.isBold ? 100 : 'bold',
+                            'fontStyle': !textWidgetNameAndGoal.isItalic ? 'normal' : 'italic',
+                            'textDecoration': !textWidgetNameAndGoal.isUnderlined ? '' : 'underline',
+                            'textShadow': `rgba( ${textWidgetNameAndGoal.colorShadow.r},
+                                ${textWidgetNameAndGoal.colorShadow.g},
+                                ${textWidgetNameAndGoal.colorShadow.b},
+                                ${textWidgetNameAndGoal.colorShadow.a}) 0px 0px ${textWidgetNameAndGoal.colorShadowWidth}px`,
+                            ...(textWidgetNameAndGoal.stroke !== '0' && textWidgetNameAndGoal.colorStroke && {
+                                'backgroundColor': `rgba(${textWidgetNameAndGoal.colorStroke.r},${textWidgetNameAndGoal.colorStroke.g},${textWidgetNameAndGoal.colorStroke.b},${textWidgetNameAndGoal.colorStroke.a})`,
+                                'WebkitTextStroke': `${textWidgetNameAndGoal.stroke}px transparent`,
+                                '-webkit-background-clip': `text`,
+                            })
+                        });
+
+                        $('.progress-bar-container').css({
+                            'backgroundColor': `rgb(${colorBackground.r} ${colorBackground.g} ${colorBackground.b} / ${colorBackground.a})`
+                        });
+
+                        $('.divider').css({
+                            'backgroundColor': `rgb(${colorDivider.r} ${colorDivider.g} ${colorDivider.b} / ${colorDivider.a})`,
+                        });
+
+                        $('#text-v3').add(".amount-received").css({
+                            'backgroundColor': `rgb(${colorPercentageAndShadow.r} ${colorPercentageAndShadow.g} ${colorPercentageAndShadow.b} / ${colorPercentageAndShadow.a})`,
+                            'boxShadow': `0px 0px 40px 4px rgb(${colorPercentageAndShadow.r} ${colorPercentageAndShadow.g} ${colorPercentageAndShadow.b} / ${colorPercentageAndShadow.a})`,
+                        });
+
+                        $('#text-v3 span').add(".amount-received span").css({
+                            ...(textGotAmountAndPercentage.stroke !== '0' && textGotAmountAndPercentage.colorStroke && {
+                                'backgroundColor': `rgba(${textGotAmountAndPercentage.colorStroke.r},${textGotAmountAndPercentage.colorStroke.g},${textGotAmountAndPercentage.colorStroke.b},${textGotAmountAndPercentage.colorStroke.a})`,
+                                'WebkitTextStroke': `${textGotAmountAndPercentage.stroke}px transparent`,
+                                '-webkit-background-clip': `text`,
+                            })
+                        });
+
+                        $(".got").add(".target").css({
+                            'color': `rgb(${colorLabel.r} ${colorLabel.g} ${colorLabel.b} / ${colorLabel.a})`
+                        });
+
+                        data.showCurrencySign && $("#goal-span-v3").text(CURRENCY[data.widgetCurrency || 'UAH']);
+                        data.showCurrencySign && $("#collected-span-v3").text(CURRENCY[data.widgetCurrency || 'UAH']);
+
+                        const progressV3 = circleWidth / goalAmount;
+
+                        const circleStylesV3 = window.getComputedStyle(circleV3);
+                        const circumferenceV3 = 2 * Math.PI * parseInt(circleStylesV3.r, 10);
+                        const offsetV3 = circumferenceV3 * (1 - progressV3);
+
+                        circleV3.style.strokeDasharray = `${circumferenceV3} ${circumferenceV3}`;
+                        circleV3.style.strokeDashoffset = offsetV3;
+
+						linearColorsFirst.style.stopColor = gradientColors && gradientColorFirst;
+						linearColorsThird.style.stopColor = gradientColors && gradientColors.length === 3 ? gradientColorThird : gradientColorSecond;
+
+						if (linearColorsSecond) {
+							linearColorsSecond.style.stopColor = gradientColors && gradientColors.length === 3 && gradientColorSecond;
+						}
+
+                        circleV3.style.stroke =  gradientColors ? 'url(#linearColors)' : `rgb(${colorGoalLine.r} ${colorGoalLine.g} ${colorGoalLine.b} / ${colorGoalLine.a})`;;
+                        innerCircleV3.style.stroke =  `rgb(${innerColorGoalLine.r} ${innerColorGoalLine.g} ${innerColorGoalLine.b} / ${innerColorGoalLine.a})`;
+                    }
+                }
+
+				function buildDiagramV6Widget(data) {
+                    const startAmount = parseInt(data.startAmount, 10) || 0;
+                    const goalAmount = parseInt(data.goalAmount, 10) || 1;
+                    let donatedAmount = parseInt(data.donatedAmount, 10) || 0;
+
+                    let label = data.widgetName;
+                    let percentage = (startAmount + donatedAmount) * 100 / goalAmount;
+
+                    if (data.widgetCompletedText && goalAmount < donatedAmount) {
+                        label = data.widgetCompletedText;
+                    }
+
+                    let number = percentage % 1 ? 2 : 0;
+                    label = label
+						.replace('{percentage}', percentage.toFixed(number) + '%')
+						.replace('{start}', startAmount + donatedAmount)
+						.replace('{end}', goalAmount)
+						.replace(/{currency}/g, widgetConfig.showCurrencySign ? (CURRENCY[widgetConfig.widgetCurrency] || CURRENCY.UAH) : '');
+
+                    if (!data.keepCountingPercentage && goalAmount < donatedAmount) {
+                        percentage = 100;
+                    }
+
+                    if (!data.keepCounting && goalAmount < donatedAmount) {
+                        donatedAmount = goalAmount;
+                    }
+
+					const innerCircleV6 = document.getElementById("circle-inner-v6-2");
+                    const circleV6 = document.getElementById("bar-v6-2");
+					const internalCircleV6 = document.getElementById("circle-internal-v6-2");
+					const markerV6 = document.getElementById("marker-v6-2");
+
+					const linearColorsFirst = document.getElementById("linearColorsFirst");
+					const linearColorsSecond = document.getElementById("linearColorsSecond");
+					const linearColorsThird = document.getElementById("linearColorsThird");
+
+                    if (circleV6 && innerCircleV6 && internalCircleV6 && markerV6) {
+                        let circleWidth = donatedAmount;
+
+                        if (donatedAmount >= goalAmount) {
+                            circleWidth = goalAmount
+                        }
+
+                        const { colorGoalLine, innerColorGoalLine, colorBackground, textWidgetNameAndGoal,
+                            colorPercentageAndShadow, textGotAmountAndPercentage, colorLabel, colorDivider, gradientColors } = data.diagramSettings;
+
+						const gradientColorFirst = gradientColors && `rgb(${gradientColors[0].r} ${gradientColors[0].g} ${gradientColors[0].b} / ${gradientColors[0].a})`;
+						const gradientColorSecond = gradientColors && `rgb(${gradientColors[1].r} ${gradientColors[1].g} ${gradientColors[1].b} / ${gradientColors[1].a})`;
+						const gradientColorThird = gradientColors && gradientColors.length === 3 ? `rgb(${gradientColors[2].r} ${gradientColors[2].g} ${gradientColors[2].b} / ${gradientColors[2].a})` : '';
+
+						const prevCollected = $('#collected-v6-2').text();
+                        $('#collected-v6-2').text(startAmount + donatedAmount);
+
+                        const prevPercentage = $('#percentages-v6-2 span').text();
+                        $('#percentages-v6-2 span').text(percentage+'%');
+
+                        $('#goal-v6-2').text(goalAmount.toLocaleString('UA-ua'));
+                        $('.widget-title').text(label);
+
+						if (data.widgetCollected) {
+							$('#widget-collected').text(data.widgetCollected);
+						}
+
+						if (data.widgetGoal) {
+							$('#widget-goal').text(data.widgetGoal + ':');
+						}
+
+                        // replace to pass correct number - .toLocaleString('UA-ua') adds comma to it.
+                        animateNumbers('#collected-v6-2', prevCollected.replace(',', ''), '');
+                        animateNumbers('#percentages-v6-2 span', prevPercentage, '%');
+
+                        $("#collected-v6-2").add("#collected-span-v6-2").add("#percentages-v6-2 span").add(".got").add(".amount-received span").css({
+                            'color': `rgb(${textGotAmountAndPercentage.color.r} ${textGotAmountAndPercentage.color.g} ${textGotAmountAndPercentage.color.b} / ${textGotAmountAndPercentage.color.a})`,
+                            'fontFamily': FONTS[textGotAmountAndPercentage.fontFamily].id,
+                            'letterSpacing': textGotAmountAndPercentage.letterSpacing + 'px',
+                            'wordSpacing': textGotAmountAndPercentage.wordSpacing + 'px',
+                            'fontWeight': !textGotAmountAndPercentage.isBold ? 100 : 'bold',
+                            'fontStyle': !textGotAmountAndPercentage.isItalic ? 'normal' : 'italic',
+                            'textDecoration': !textGotAmountAndPercentage.isUnderlined ? '' : 'underline',
+                            'textShadow': `rgba( ${textGotAmountAndPercentage.colorShadow.r},
+                                ${textGotAmountAndPercentage.colorShadow.g},
+                                ${textGotAmountAndPercentage.colorShadow.b},
+                                ${textGotAmountAndPercentage.colorShadow.a}) 0px 0px ${textGotAmountAndPercentage.colorShadowWidth}px`,
+                            ...(textGotAmountAndPercentage.stroke !== '0' && textGotAmountAndPercentage.colorStroke && {
+                                backgroundColor: `rgba(${textGotAmountAndPercentage.colorStroke.r},${textGotAmountAndPercentage.colorStroke.g},${textGotAmountAndPercentage.colorStroke.b},${textGotAmountAndPercentage.colorStroke.a})`,
+                                'WebkitTextStroke': `${textGotAmountAndPercentage.stroke}px transparent`,
+                                '-webkit-background-clip': `text`,
+                            })
+                        });
+
+                        $(".widget-title").add("#goal-v6-2").add("#goal-span-v6-2").css({
+                            'color': `rgb(${textWidgetNameAndGoal.color.r} ${textWidgetNameAndGoal.color.g} ${textWidgetNameAndGoal.color.b} / ${textWidgetNameAndGoal.color.a})`,
+                            'fontFamily': FONTS[textWidgetNameAndGoal.fontFamily].id,
+                            'letterSpacing': textWidgetNameAndGoal.letterSpacing + 'px',
+                            'wordSpacing': textWidgetNameAndGoal.wordSpacing + 'px',
+                            'fontWeight': !textWidgetNameAndGoal.isBold ? 100 : 'bold',
+                            'fontStyle': !textWidgetNameAndGoal.isItalic ? 'normal' : 'italic',
+                            'textDecoration': !textWidgetNameAndGoal.isUnderlined ? '' : 'underline',
+                            'textShadow': `rgba( ${textWidgetNameAndGoal.colorShadow.r},
+                                ${textWidgetNameAndGoal.colorShadow.g},
+                                ${textWidgetNameAndGoal.colorShadow.b},
+                                ${textWidgetNameAndGoal.colorShadow.a}) 0px 0px ${textWidgetNameAndGoal.colorShadowWidth}px`,
+                            ...(textWidgetNameAndGoal.stroke !== '0' && textWidgetNameAndGoal.colorStroke && {
+                                'backgroundColor': `rgba(${textWidgetNameAndGoal.colorStroke.r},${textWidgetNameAndGoal.colorStroke.g},${textWidgetNameAndGoal.colorStroke.b},${textWidgetNameAndGoal.colorStroke.a})`,
+                                'WebkitTextStroke': `${textWidgetNameAndGoal.stroke}px transparent`,
+                                '-webkit-background-clip': `text`,
+                            })
+                        });
+
+                        $('.progress-bar-container').css({
+                            'backgroundColor': `rgb(${colorBackground.r} ${colorBackground.g} ${colorBackground.b} / ${colorBackground.a})`
+                        });
+
+                        $('.divider').css({
+                            'borderColor': `rgb(${colorDivider.r} ${colorDivider.g} ${colorDivider.b} / ${colorDivider.a})`,
+                        });
+
+                        $('#percentages-v6-2 span').add(".amount-received span").css({
+                            ...(textGotAmountAndPercentage.stroke !== '0' && textGotAmountAndPercentage.colorStroke && {
+                                'backgroundColor': `rgba(${textGotAmountAndPercentage.colorStroke.r},${textGotAmountAndPercentage.colorStroke.g},${textGotAmountAndPercentage.colorStroke.b},${textGotAmountAndPercentage.colorStroke.a})`,
+                                'WebkitTextStroke': `${textGotAmountAndPercentage.stroke}px transparent`,
+                                '-webkit-background-clip': `text`,
+                            })
+                        });
+
+                        $(".got").add(".target").css({
+                            'color': `rgb(${colorLabel.r} ${colorLabel.g} ${colorLabel.b} / ${colorLabel.a})`
+                        });
+
+                        data.showCurrencySign && $("#goal-span-v6-2").text(CURRENCY[data.widgetCurrency || 'UAH']);
+                        data.showCurrencySign && $("#collected-span-v6-2").text(CURRENCY[data.widgetCurrency || 'UAH']);
+
+                        const progressV6 = circleWidth / goalAmount;
+
+                        const circleStylesV6 = window.getComputedStyle(circleV6);
+                        const circumferenceV6 = 2 * Math.PI * parseInt(circleStylesV6.r, 10);
+                        const offsetV6 = circumferenceV6 * (1 - progressV6);
+
+                        circleV6.style.strokeDasharray = `${circumferenceV6} ${circumferenceV6}`;
+                        circleV6.style.strokeDashoffset = offsetV6;
+						markerV6.style.transform = "rotate(" + 360 * progressV6 + "deg)";
+
+						linearColorsFirst.style.stopColor = gradientColors && gradientColorFirst;
+						linearColorsThird.style.stopColor = gradientColors && gradientColors.length === 3 ? gradientColorThird : gradientColorSecond;
+
+						if (linearColorsSecond) {
+							linearColorsSecond.style.stopColor = gradientColors && gradientColors.length === 3 && gradientColorSecond;
+						}
+
+                        circleV6.style.stroke =  gradientColors ? 'url(#linearColors)' : `rgb(${colorGoalLine.r} ${colorGoalLine.g} ${colorGoalLine.b} / ${colorGoalLine.a})`;;
+                        innerCircleV6.style.stroke =  `rgb(${innerColorGoalLine.r} ${innerColorGoalLine.g} ${innerColorGoalLine.b} / ${innerColorGoalLine.a})`;
+						markerV6.style.stroke = gradientColors ? 'url(#linearColors)' : `rgb(${colorGoalLine.r} ${colorGoalLine.g} ${colorGoalLine.b} / ${colorGoalLine.a})`;
+						internalCircleV6.style.fill = `rgb(${colorPercentageAndShadow.r} ${colorPercentageAndShadow.g} ${colorPercentageAndShadow.b} / ${colorPercentageAndShadow.a})`;
+                    }
+                }
+
+				function buildProgressBarWidget(data) {
+                    const startAmount = parseInt(data.startAmount, 10) || 0;
+                    const goalAmount = parseInt(data.goalAmount, 10) || 1;
+                    let donatedAmount = parseInt(data.donatedAmount, 10) || 0;
+
+                    let label = data.widgetName;
+                    let percentage = (startAmount + donatedAmount) * 100 / goalAmount;
+					let progressBarWidth = percentage;
+
+					if (percentage > 100) {
+						progressBarWidth = 100;
+					}
+
+					if (data.widgetCompletedText && goalAmount < donatedAmount) {
+                        label = data.widgetCompletedText;
+                    }
+
+                    let number = percentage % 1 ? 2 : 0;
+                    label = label.replace('{percentage}', percentage.toFixed(number) + '%');
+                    label = label.replace('{start}', startAmount + donatedAmount);
+                    label = label.replace('{end}', goalAmount);
+					label = label.replace(/{currency}/g, widgetConfig.showCurrencySign ? (CURRENCY[widgetConfig.widgetCurrency] || CURRENCY.UAH) : '');
+
+					if (!data.keepCountingPercentage && goalAmount < donatedAmount) {
+                        percentage = 100;
+                    }
+
+                    if (!data.keepCounting && goalAmount < donatedAmount) {
+                        donatedAmount = goalAmount;
+                    }
+
+					if (data.widgetGoal) {
+							$('#widget-goal').text(data.widgetGoal + ':');
+						}
+
+					$('#widget-v7 h5').text(label);
+
+					$('#goal-v7').text(goalAmount.toLocaleString('UA-ua'));
+
+					data.showCurrencySign && $("#collected-v7-currency").text(CURRENCY[data.widgetCurrency || 'UAH']);
+                    data.showCurrencySign && $("#goal-v7-currency").text(CURRENCY[data.widgetCurrency || 'UAH']);
+
+					const prevCollected = $('#collected-v7').text();
+					$('#collected-v7').text(startAmount + donatedAmount);
+
+					animateNumbers('#collected-v7', prevCollected.replace(',', ''), '');
+
+					const {
+						colorBackground,
+						textWidgetNameAndGoal,
+						textGotAmount,
+						colorLabel,
+						gradientColors,
+						gradientAngle,
+						progressBarColor,
+						gradientAnimation,
+						borderRadius,
+						gotAmountBorderRadius
+					} = data.progressBarSettings;
+
+					$("#text-v7 span").add(".amount-received span").css({
+						'color': `rgb(${textGotAmount.color.r} ${textGotAmount.color.g} ${textGotAmount.color.b} / ${textGotAmount.color.a})`,
+						'fontFamily': FONTS[textGotAmount.fontFamily].id,
+						'letterSpacing': textGotAmount.letterSpacing + 'px',
+						'wordSpacing': textGotAmount.wordSpacing + 'px',
+						'fontWeight': !textGotAmount.isBold ? 100 : 'bold',
+						'fontStyle': !textGotAmount.isItalic ? 'normal' : 'italic',
+						'textDecoration': !textGotAmount.isUnderlined ? '' : 'underline',
+						'textShadow': `rgba( ${textGotAmount.colorShadow.r},
+							${textGotAmount.colorShadow.g},
+							${textGotAmount.colorShadow.b},
+							${textGotAmount.colorShadow.a}) 0px 0px ${textGotAmount.colorShadowWidth}px`,
+						...(textGotAmount.stroke !== '0' && textGotAmount.colorStroke && {
+							backgroundColor: `rgba(${textGotAmount.colorStroke.r},${textGotAmount.colorStroke.g},${textGotAmount.colorStroke.b},${textGotAmount.colorStroke.a})`,
+							'WebkitTextStroke': `${textGotAmount.stroke}px transparent`,
+							'-webkit-background-clip': `text`,
+						})
+					});
+
+					$("#widget-v7 h5").add("#widget-v7 .goal span").css({
+						'color': `rgb(${textWidgetNameAndGoal.color.r} ${textWidgetNameAndGoal.color.g} ${textWidgetNameAndGoal.color.b} / ${textWidgetNameAndGoal.color.a})`,
+						'fontFamily': FONTS[textWidgetNameAndGoal.fontFamily].id,
+						'letterSpacing': textWidgetNameAndGoal.letterSpacing + 'px',
+						'wordSpacing': textWidgetNameAndGoal.wordSpacing + 'px',
+						'fontWeight': !textWidgetNameAndGoal.isBold ? 100 : 'bold',
+						'fontStyle': !textWidgetNameAndGoal.isItalic ? 'normal' : 'italic',
+						'textDecoration': !textWidgetNameAndGoal.isUnderlined ? '' : 'underline',
+						'textShadow': `rgba( ${textWidgetNameAndGoal.colorShadow.r},
+							${textWidgetNameAndGoal.colorShadow.g},
+							${textWidgetNameAndGoal.colorShadow.b},
+							${textWidgetNameAndGoal.colorShadow.a}) 0px 0px ${textWidgetNameAndGoal.colorShadowWidth}px`,
+						...(textWidgetNameAndGoal.stroke !== '0' && textWidgetNameAndGoal.colorStroke && {
+							'backgroundColor': `rgba(${textWidgetNameAndGoal.colorStroke.r},${textWidgetNameAndGoal.colorStroke.g},${textWidgetNameAndGoal.colorStroke.b},${textWidgetNameAndGoal.colorStroke.a})`,
+							'WebkitTextStroke': `${textWidgetNameAndGoal.stroke}px transparent`,
+							'-webkit-background-clip': `text`,
+						})
+					});
+
+					$("#widget-v7 .progress-bar-goal > span").css({
+						'color': `rgb(${colorLabel.r} ${colorLabel.g} ${colorLabel.b} / ${colorLabel.a})`
+					});
+
+					$("#widget-v7 .progress-bar-container").css({
+						'backgroundColor': `rgb(${colorBackground.r} ${colorBackground.g} ${colorBackground.b} / ${colorBackground.a})`
+					});
+
+					const indicatorColor = gradientColors ?  (
+						`linear-gradient(
+							${gradientAngle || 90}deg,
+							rgb(
+								${gradientColors[0].r}
+								${gradientColors[0].g}
+								${gradientColors[0].b} /
+								${gradientColors[0].a}
+							),
+							rgb(
+								${gradientColors[1].r}
+								${gradientColors[1].g}
+								${gradientColors[1].b} /
+								${gradientColors[1].a}
+							)
+							${gradientColors.length === 3 ?
+								`, rgb(
+									${gradientColors[2].r}
+									${gradientColors[2].g}
+									${gradientColors[2].b} /
+									${gradientColors[2].a}
+								)`
+							: ''
+							}
+						)`
+						) : (
+						`rgb(
+							${progressBarColor.r}
+							${progressBarColor.g}
+							${progressBarColor.b} /
+							${progressBarColor.a}
+						)`
+					);
+
+					$("#widget-v7 #progress-bar").css({
+						'border-radius': `${borderRadius || 10}px`
+					});
+
+					$("#progress-v7").css({
+						'width': `${progressBarWidth+'%'}`,
+						'background': `${indicatorColor}`,
+						'border-top-left-radius': `${borderRadius || 10}px`,
+						'border-bottom-left-radius': `${borderRadius || 10}px`,
+						'border-top-right-radius': `${gotAmountBorderRadius || 10}px`,
+						'border-bottom-right-radius': `${gotAmountBorderRadius || 10}px`,
+					});
+
+					$(".amount-received").css({
+						'background': `${indicatorColor}`
+					});
+
+					if (gradientAnimation === 'always') {
+						$("#progress-v7").addClass('gradient-animation');
+					}
+
+					if (progressBarWidth < 25) {
+						$("#text-v7").css({
+							'position': 'absolute',
+							'left': '0'
+						})
+					}
+				}
+
+				function buildProgressBarV4Widget(data) {
+                    const startAmount = parseInt(data.startAmount, 10) || 0;
+                    const goalAmount = parseInt(data.goalAmount, 10) || 1;
+                    let donatedAmount = parseInt(data.donatedAmount, 10) || 0;
+
+                    let percentage = (startAmount + donatedAmount) * 100 / goalAmount;
+					let progressBarWidth = percentage;
+
+					if (percentage > 100) {
+						progressBarWidth = 100;
+					}
+
+					if (!data.keepCountingPercentage && goalAmount < donatedAmount) {
+                        percentage = 100;
+                    }
+
+                    if (!data.keepCounting && goalAmount < donatedAmount) {
+                        donatedAmount = goalAmount;
+                    }
+
+					if (data.widgetCollected) {
+							$('#widget-collected').text(data.widgetCollected);
+						}
+
+					$('#goal-v4-2').text(goalAmount.toLocaleString('UA-ua'));
+
+					const prevPercentage = $('#text-v4-2').text();
+                    $('#text-v4-2').text(percentage + '%');
+
+                    animateNumbers('#text-v4-2', prevPercentage, '%');
+
+					data.showCurrencySign && $("#collected-v4-2-currency").text(CURRENCY[data.widgetCurrency || 'UAH']);
+                    data.showCurrencySign && $("#goal-v4-2-currency").text(CURRENCY[data.widgetCurrency || 'UAH']);
+
+					const prevCollected = $('#collected-v4-2').text();
+					$('#collected-v4-2').text(startAmount + donatedAmount);
+
+					animateNumbers('#collected-v4-2', prevCollected.replace(',', ''), '');
+
+					const {
+						colorBackground,
+						textWidgetNameAndGoal,
+						textGotAmount,
+						colorLabel,
+						gradientColors,
+						gradientAngle,
+						progressBarColor,
+						gradientAnimation,
+						borderRadius,
+						gotAmountBorderRadius
+					} = data.progressBarSettings;
+
+					$("#text-v4-2").add("#collected-v4-2").add("#collected-v4-2-currency").add(".amount-received span").css({
+						'color': `rgb(${textGotAmount.color.r} ${textGotAmount.color.g} ${textGotAmount.color.b} / ${textGotAmount.color.a})`,
+						'fontFamily': FONTS[textGotAmount.fontFamily].id,
+						'letterSpacing': textGotAmount.letterSpacing + 'px',
+						'wordSpacing': textGotAmount.wordSpacing + 'px',
+						'fontWeight': !textGotAmount.isBold ? 100 : 'bold',
+						'fontStyle': !textGotAmount.isItalic ? 'normal' : 'italic',
+						'textDecoration': !textGotAmount.isUnderlined ? '' : 'underline',
+						'textShadow': `rgba( ${textGotAmount.colorShadow.r},
+							${textGotAmount.colorShadow.g},
+							${textGotAmount.colorShadow.b},
+							${textGotAmount.colorShadow.a}) 0px 0px ${textGotAmount.colorShadowWidth}px`,
+						...(textGotAmount.stroke !== '0' && textGotAmount.colorStroke && {
+							backgroundColor: `rgba(${textGotAmount.colorStroke.r},${textGotAmount.colorStroke.g},${textGotAmount.colorStroke.b},${textGotAmount.colorStroke.a})`,
+							'WebkitTextStroke': `${textGotAmount.stroke}px transparent`,
+							'-webkit-background-clip': `text`,
+						})
+					});
+
+					$("#goal-v4-2").add("#goal-v4-2-currency").css({
+						'color': `rgb(${textWidgetNameAndGoal.color.r} ${textWidgetNameAndGoal.color.g} ${textWidgetNameAndGoal.color.b} / ${textWidgetNameAndGoal.color.a})`,
+						'fontFamily': FONTS[textWidgetNameAndGoal.fontFamily].id,
+						'letterSpacing': textWidgetNameAndGoal.letterSpacing + 'px',
+						'wordSpacing': textWidgetNameAndGoal.wordSpacing + 'px',
+						'fontWeight': !textWidgetNameAndGoal.isBold ? 100 : 'bold',
+						'fontStyle': !textWidgetNameAndGoal.isItalic ? 'normal' : 'italic',
+						'textDecoration': !textWidgetNameAndGoal.isUnderlined ? '' : 'underline',
+						'textShadow': `rgba( ${textWidgetNameAndGoal.colorShadow.r},
+							${textWidgetNameAndGoal.colorShadow.g},
+							${textWidgetNameAndGoal.colorShadow.b},
+							${textWidgetNameAndGoal.colorShadow.a}) 0px 0px ${textWidgetNameAndGoal.colorShadowWidth}px`,
+						...(textWidgetNameAndGoal.stroke !== '0' && textWidgetNameAndGoal.colorStroke && {
+							'backgroundColor': `rgba(${textWidgetNameAndGoal.colorStroke.r},${textWidgetNameAndGoal.colorStroke.g},${textWidgetNameAndGoal.colorStroke.b},${textWidgetNameAndGoal.colorStroke.a})`,
+							'WebkitTextStroke': `${textWidgetNameAndGoal.stroke}px transparent`,
+							'-webkit-background-clip': `text`,
+						})
+					});
+
+					$("#widget-v4-2 .progress-bar-collected > span").css({
+						'color': `rgb(${colorLabel.r} ${colorLabel.g} ${colorLabel.b} / ${colorLabel.a})`
+					});
+
+					$("#widget-v4-2 .progress-bar-container").css({
+						'backgroundColor': `rgb(${colorBackground.r} ${colorBackground.g} ${colorBackground.b} / ${colorBackground.a})`
+					});
+
+					const indicatorColor = gradientColors ?  (
+						`linear-gradient(
+							${gradientAngle || 90}deg,
+							rgb(
+								${gradientColors[0].r}
+								${gradientColors[0].g}
+								${gradientColors[0].b} /
+								${gradientColors[0].a}
+							),
+							rgb(
+								${gradientColors[1].r}
+								${gradientColors[1].g}
+								${gradientColors[1].b} /
+								${gradientColors[1].a}
+							)
+							${gradientColors.length === 3 ?
+								`, rgb(
+									${gradientColors[2].r}
+									${gradientColors[2].g}
+									${gradientColors[2].b} /
+									${gradientColors[2].a}
+								)`
+							: ''
+							}
+						)`
+						) : (
+						`rgb(
+							${progressBarColor.r}
+							${progressBarColor.g}
+							${progressBarColor.b} /
+							${progressBarColor.a}
+						)`
+					);
+
+					$("#widget-v4-2 #progress-bar").css({
+						'border-radius': `${borderRadius || 10}px`
+					});
+
+					$("#progress-v4-2").css({
+						'width': `${progressBarWidth+'%'}`,
+						'background': `${indicatorColor}`,
+						'border-top-left-radius': `${borderRadius || 10}px`,
+						'border-bottom-left-radius': `${borderRadius || 10}px`,
+						'border-top-right-radius': `${gotAmountBorderRadius || 10}px`,
+						'border-bottom-right-radius': `${gotAmountBorderRadius || 10}px`,
+					});
+
+					$("#text-v4-2").css({
+						'background': `${indicatorColor}`
+					});
+
+					$(".amount-received").css({
+						'background': `${indicatorColor}`
+					});
+
+					if (gradientAnimation === 'always') {
+						$("#progress-v4-2").addClass('gradient-animation');
+					}
+				}
+
+                function buildDefaultWidget(data) {
+                    const startAmount = parseInt(data.startAmount, 10) || 0;
+                    const goalAmount = parseInt(data.goalAmount, 10) || 1;
+                    const height = parseInt(data.height, 10) || 50;
+                    let donatedAmount = parseInt(data.donatedAmount, 10) || 0;
+                    let text = '';
+                    let percentageWidth = 0;
+                    let fontSize = colorText.fontSize + 'px' || '6vh';
+                    let percentage = (startAmount + donatedAmount) * 100 / goalAmount;
+                    percentage = (isNaN(percentage) ? '0' : Math.round(percentage));
+
+                    if (widgetConfig.isNinetyDegree) {
+                        $('.element').hide();
+                        $('.widget-rotated').show();
+                    } else {
+                        $('.element').show();
+                        $('.widget-rotated').hide();
+                    }
+
+                    if (!widgetConfig.keepCountingPercentage) {
+                        percentage = percentage >= 100 ? 100 : percentage;
+                    }
+
+                    if (percentage >= 100) {
+                        percentageWidth = 100;
+                    } else {
+                        percentageWidth = percentage;
+                    }
+
+                    if (percentage >= 100 && widgetConfig.widgetCompletedText) {
+                        text = widgetConfig.widgetCompletedText;
+                    } else {
+                        if (widgetConfig.isNinetyDegree) {
+                            text = widgetConfig.widgetName.replace('{percentage}', ' <div>' + percentage + '%</div>');
+                        } else {
+                            text = widgetConfig.widgetName.replace('{percentage}', percentage + '%');
+                        }
+                        text = text.replace('{start}', startAmount + donatedAmount);
+                        text = text.replace('{end}', goalAmount);
+                        text = text.replace(/{currency}/g, widgetConfig.showCurrencySign ? (CURRENCY[widgetConfig.widgetCurrency] || CURRENCY.UAH) : '');
+                    }
+
+                    $('.imageDivider').hide();
+                    if (data.gifSeparator) {
+                        $('.imageDivider').attr("src", data.gifSeparator.url);
+                        $('.imageDivider').show();
+
+                        if (data.gifSeparatorAbove) {
+                            $('.imageDivider').css({
+                                zIndex: 9
+                            });
+                        }
+                    }
+
+                    if (widgetConfig.multiGoal) {
+                        const multiGoal = widgetConfig.multiGoalItems;
+                        const gradient = multiGoal.gradientColor || {b: 50, g: 50, r: 50,a: 0.5};
+                        const borderColor = multiGoal.borderColor || {b: 50, g: 50, r: 50,a: 1};
+                        const gradientStart = multiGoal.gradientStart || 50;
+
+                        $('.multi-goal').css({
+                            position: 'absolute',
+                            height: `${multiGoal.multiGoalWidgetHeight || 100}px`,
+                            'z-index': '9',
+                            'margin-left': '10px',
+                            'margin-right': '10px',
+                            'display': 'flex',
+                            'align-items': 'stretch',
+                            width: 'calc(100% - 20px)'
+                        });
+
+                        $('.multi-goal').empty();
+                        multiGoal.items.forEach(item => {
+                            $('.multi-goal').append(`
+                                <div class="multi-goal-element textSize changeFont changeFontNumbers" style='width: ${(item.amount * 100 / data.goalAmount).toFixed(2)}%;'>${item.name.replace('{amount}', item.amount)}</div>
+                            `)
+                        })
+
+                        $('.multi-goal-element').css({
+                            display: 'flex',
+                            'align-items': 'center',
+                            background: `linear-gradient(90deg, transparent ${gradientStart}%, rgba(${gradient.r},${gradient.g},${gradient.b},${gradient.a}) 100%)`,
+                            'border-top-right-radius': `${multiGoal.borderRadius || 0}px`,
+                            'border-bottom-right-radius': `${multiGoal.borderRadius || 0}px`,
+                            'border-right': `${multiGoal.borderWidth}px solid rgba(${borderColor.r},${borderColor.g},${borderColor.b},${borderColor.a})`,
+                        });
+
+                        if (multiGoal.textPosition === 'right') {
+                            $('.multi-goal-element').css({
+                                'padding-right': `${multiGoal.padding}px`,
+                                'justify-content': 'flex-end',
+                            });
+                        }
+
+                        if (multiGoal.textPosition === 'left') {
+                            $('.multi-goal-element').css({
+                                'padding-left': `${multiGoal.padding}px`,
+                                'justify-content': 'flex-start',
+                            });
+                        }
+
+                        if (multiGoal.textPosition === 'center') {
+                            $('.multi-goal-element').css({
+                                'padding-left': `${multiGoal.padding}px`,
+                                'justify-content': 'center',
+                            });
+                        }
+                    } else {
+                        $('.multi-goal').empty();
+                    }
+
+                    if (widgetConfig.textPosition === 'above') {
+                        $('.text-header.top').show();
+                        $('.text-header.top').html(text);
+                        $('.text-header.middle').hide();
+                        $('.text-header.bottom').hide();
+
+                        $('.text-header.top').css({
+                            width: '100%',
+                            display: 'block',
+                            'text-align': widgetConfig.textAlignment || 'center',
+                            'padding-left': '10px',
+                            'padding-right': '10px',
+                        })
+                    }
+
+                    if (widgetConfig.textPosition === 'inside') {
+                        $('.text-header.top').hide();
+                        $('.text-header.middle').show();
+                        $('.text-header.middle').html(text);
+                        $('.text-header.bottom').hide();
+
+                        $('.text-header.middle').css({
+                            width: '100%',
+                            'text-align': widgetConfig.textAlignment || 'center'
+                        })
+                    }
+
+                    if (widgetConfig.textPosition === 'below') {
+                        $('.text-header.top').hide();
+                        $('.text-header.middle').hide();
+                        $('.text-header.bottom').show();
+                        $('.text-header.bottom').html(text);
+
+                        $('.text-header.bottom').css({
+                            width: '100%',
+                            display: 'block',
+                            'text-align': widgetConfig.textAlignment || 'center',
+                            'padding-left': '10px',
+                            'padding-right': '10px',
+                        })
+                    }
+
+                    if (widgetConfig.textPosition === 'none') {
+                        $('.text-header.top').hide();
+                        $('.text-header.middle').hide();
+                        $('.text-header.bottom').hide();
+                    }
+
+                    $('.textSize').css({ 'fontSize': fontSize });
+
+                    if (widgetConfig.hideMinMaxNumbers) {
+                        $('.start').text(" ");
+                        $('.end').text(" ");
+                    } else {
+                        $('.start').text(`${startAmount + donatedAmount}${widgetConfig.showCurrencySign ? (CURRENCY[widgetConfig.widgetCurrency] || CURRENCY.UAH) : ''}`);
+                        $('.end').text(`${goalAmount}${widgetConfig.showCurrencySign ? (CURRENCY[widgetConfig.widgetCurrency] || CURRENCY.UAH) : ''}`);
+                    }
+
+                    $('.received').css({
+                        'border-radius': `${data.borderRadius || 0}px`,
+                    });
+
+					if (data.gotAmountBorderRadius && data.gotAmountBorderRadius > 0) {
+						$('.received').css({
+							'background': `rgba(
+								${colorFont.r},
+								${colorFont.g},
+								${colorFont.b},
+								${colorFont.a})`
+						})
+					} else {
+						$('.received').css({
+							'background': 'none'
+						})
+					}
+
+                    $('.got').css({
+						'border-top-right-radius': `${data.gotAmountBorderRadius || 0}px`,
+						'border-bottom-right-radius': `${data.gotAmountBorderRadius || 0}px`,
+                        'background': `rgba(
+                            ${color.r},
+                            ${color.g},
+                            ${color.b},
+                            ${color.a})`
+                    });
+
+                    $('.left').css({
+                        'background': `rgba(
+                            ${colorFont.r},
+                            ${colorFont.g},
+                            ${colorFont.b},
+                            ${colorFont.a})`
+                    });
+
+                    if (!widgetConfig.isNinetyDegree && widgetConfig.elementsAnimation) {
+                        $('.left').animate({
+                            'width': `${100 - percentageWidth}%`,
+                        }, 1500 );
+                    } else {
+                        $('.left').css({'width': `${100 - percentageWidth}%`});
+                    }
+
+                    if (!widgetConfig.isNinetyDegree) {
+                        $('.imageDivider').css({
+                            'height': `${height}px`,
+                        });
+
+                        if (widgetConfig.elementsAnimation) {
+                            $('.imageDivider').animate({
+                                'right': `${100 - percentageWidth}%`,
+                            }, 1500 );
+                        } else {
+                            $('.imageDivider').css({'right': `${100 - percentageWidth}%`});
+                        }
+                    }
+
+                    if (widgetConfig.isNinetyDegree) {
+                        $('.received-rotated').css({
+                            'border-radius': `${data.borderRadius || 0}px`,
+                        });
+
+						if (data.gotAmountBorderRadius && data.gotAmountBorderRadius > 0) {
+							$('.received-rotated').css({
+								'background': `rgba(
+									${colorFont.r},
+									${colorFont.g},
+									${colorFont.b},
+									${colorFont.a})`
+							})
+						} else {
+							$('.received-rotated').css({
+								'background': 'none'
+							})
+						}
+
+                        $('.got').css({
+                            'height': `${percentageWidth}%`,
+							'border-top-left-radius': `${data.gotAmountBorderRadius || 0}px`,
+							'border-bottom-right-radius': '0px',
+                        });
+
+                        $('.left').css({
+                            'height': `${100 - percentageWidth}%`,
+                        });
+
+                        $('.text-header.middle').css({
+                            'text-align': 'center'
+                        });
+
+                        $('.received-rotated').css({
+                            'width': `${height}px`,
+                        });
+
+                        $('.text-rotated').css({
+                            'width': `${height - (data.borderWidth * 2)}px`,
+                        });
+
+                        $('.imageDivider').css({
+                            'bottom': `${percentageWidth}%`,
+                            'width': `${height}px`,
+                        });
+                    }
+
+                    $('.text').css({
+                        'height': `${height}px`,
+                    });
+                    $('.widget').css({
+                        'height': `${height}px`,
+                    });
+
+                    $('.changeFont').css({
+                        'fontFamily': FONTS[colorText.fontFamily].id,
+                        'letterSpacing': colorText.letterSpacing + 'px',
+                        'wordSpacing': colorText.wordSpacing + 'px',
+                        'fontWeight': !colorText.isBold ? 100 : 'bold',
+                        'fontStyle': !colorText.isItalic ? 'normal' : 'italic',
+                        'text-decoration': !colorText.isUnderlined ? '' : 'underline',
+                        'textShadow': `rgba( ${colorText.colorShadow.r},
+                                ${colorText.colorShadow.g},
+                                ${colorText.colorShadow.b},
+                                ${colorText.colorShadow.a}) 0px 0px ${colorText.colorShadowWidth}px`,
+                        'color': `rgba( ${colorText.color.r},
+                            ${colorText.color.g},
+                            ${colorText.color.b},
+                            ${colorText.color.a})`,
+                        ...(colorText.stroke !== '0' && colorText.colorStroke && {
+                            backgroundColor: `rgba(${colorText.colorStroke.r},${colorText.colorStroke.g},${colorText.colorStroke.b},${colorText.colorStroke.a})`,
+                            'WebkitTextStroke': `${colorText.stroke}px transparent`,
+                            '-webkit-background-clip': `text`,
+                        })
+                    });
+
+                    if (colorFontNumbers) {
+                        $('.changeFontNumbers').css({
+                            'color': `rgba( ${colorFontNumbers.r},
+                                ${colorFontNumbers.g},
+                                ${colorFontNumbers.b},
+                                ${colorFontNumbers.a})`
+                        });
+                    }
+
+                    if (widgetConfig.gradient) {
+                        buildGradient(data, percentageWidth)
+                    }
+
+                    if (!widgetConfig.isNinetyDegree && widgetConfig.elementsAnimation) {
+                        $('.got').animate({
+                            'width': getGotWidth(data, percentageWidth)
+                        }, 1500 );
+                    } else {
+                        $('.got').css({'width': getGotWidth(data, percentageWidth)});
+                    }
+
+                    const b = data.colorBorder;
+
+                    if (b) {
+                        $('.received').css({
+                            border: `${data.borderWidth}px solid rgba(${b.r},${b.g},${b.b},${b.a})`
+                        });
+
+                        $('.received-rotated').css({
+                            border: `${data.borderWidth}px solid rgba(${b.r},${b.g},${b.b},${b.a})`
+                        });
+                    }
+
+                    $('.element').removeClass('hidden');
+                }
+
+                getWidgetData();
+                initSocket();
+            });
+        </script>
+
+        
+            <div class="element" style="display: none;">
+                <div class="text-header textSize top changeFont"></div>
+                <div class="widget">
+                    <div class="multi-goal"></div>
+                    <div class="received">
+                        <div class="got textSize">0</div>
+                        <img class="imageDivider" style="display: none;" />
+                        <div class="left textSize">0</div>
+                    </div>
+                    <div class="text">
+                        <div class="start textSize changeFont changeFontNumbers">0</div>
+                        <div class="text-header middle textSize changeFont"></div>
+                        <div class="end textSize changeFont changeFontNumbers">0</div>
+                    </div>
+                </div>
+                <div class="text-header textSize bottom changeFont"></div>
+            </div>
+
+            <div class="widget-rotated" style="display: none;">
+                <div class="received-rotated">
+                    <div class="two left textSize"></div>
+                    <img class="imageDivider" style="display: none;" />
+                    <div class="one got textSize"></div>
+                </div>
+                <div class="text-rotated">
+                    <div class="end textSize changeFont changeFontNumbers">0</div>
+                    <div class="text-header middle textSize changeFont"></div>
+                    <div class="start textSize changeFont changeFontNumbers">0</div>
+                </div>
+            </div>
+        
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+@media (min-width: 800px) {
+	#YouTubeModal .modal-dialog{
+		min-width: 600px;
+	}
+}
+
+@media (max-width: 800px) {
+	.youtube-video-container {
+		height: 230px !important;
+	}
+
+	#YouTubeModal .btn-secondary {
+		width: 50% !important;
+	}
+}
+
+#YouTubeModal .btn-secondary {
+	width: 40%;
+}
+
+.modal-button {
+	border-radius: 20px;
+	background-color: #0A1830;
+	color: white;
+	height: 50px;
+	font-size: 16px;
+}
+
+#YouTubeModal .start-time-text {
+	color: #8D939C;
+	font-size: 16px;
+}
+
+#YouTubeModal .start-time-seconds {
+	color: #0A1830;
+	font-size: 16px;
+}
+
+.dark #YouTubeModal .start-time-seconds {
+	color: #FFFFFF;
+}
+
+.youtube-video-container {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+	position: relative;
+	width: 100%;
+	height: 300px;
+	background: #F6F6F7;
+	border: 2px dashed #D7D9DD;
+  border-radius: 10px;
+}
+
+.youtube-video-container .media-content {
+	display: flex;
+  justify-content: center;
+}
+
+.youtube-video-container img {
+  position: absolute;
+  top: 41%;
+  left: 44%;
+	width: 50px;
+}
+
+.youtube-video-requirements {
+	width: 100%;
+	background: #ffffff;
+	border: 2px solid #EB5757;
+  border-radius: 10px;
+	padding: 10px;
+	margin-bottom: 1.5rem;
+}
+
+.youtube-video-requirements.error {
+	color: #ffffff;
+	background-color: #EB5757;
+}
+
+.iframe-youtube {
+	position: inherit;
+	width: 100%;
+	height: 260px;
+	border-radius: 10px;
+}
+
+.d-contents {
+	display: contents;
+}

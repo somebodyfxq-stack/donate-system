@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css?family=Kurale|Pangolin|Philosopher|monofont|Bad+Script|Comfortaa|Cormorant+SC|Didact+Gothic|Exo+2|Forum|Kelly+Slab|Kurale|Lobster|Lobster+Two|Lora|Marck+Script|Merriweather|Neucha|Noto+Serif|Open+Sans|Open+Sans+Condensed:300|Oswald|Philosopher|Play|Playfair+Display|Poiret+One|Press+Start+2P|Roboto+Condensed|Roboto+Slab|Rubik|Rubik+Mono+One|Ruslan+Display|Russo+One|Underdog|Amatic+SC|Andika|Caveat|Jura|Literata|Poiret+One|Fira+Sans+Extra+Condensed|Montserrat');
+
+body {
+    background-color: transparent;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-header.top {
+    display: flex;
+    flex-direction: row;
+}
+
+.widget {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.received {
+    width: 100%!important;
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.text {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+}
+
+.text-header.bottom {
+    display: flex;
+    flex-direction: row;
+}
+
+.text-header {
+    word-break: break-all;
+}
+
+.got {
+    height: 100%;
+}
+
+.animate__animated {
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+}
+
+.animate__animated.always {
+    animation-iteration-count: infinite;
+}
+
+.left {
+    height: 100%;
+    position: absolute;
+    right: 0px;
+}
+
+.got.gradient-animation {
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400% !important;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.textSize {
+    font-size: 20px;
+}
+
+.received .got,
+.received .left {
+    color: transparent;
+}
+
+.start {
+    padding-left: 10px;
+}
+
+.end {
+    padding-right: 10px;
+}
+
+.widget-rotated {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.widget-rotated .received-rotated {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    /* margin: 50px; */
+    overflow: hidden;
+}
+
+.widget-rotated .text-rotated {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.widget-rotated .text-rotated .start,
+.widget-rotated .text-rotated .end {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.widget-rotated .two.left {
+    position: unset;
+}
+
+.widget-rotated .received-rotated .one,
+.widget-rotated .received-rotated .two {
+    width: 100%!important;
+}
+
+.imageDivider {
+    position: absolute;
+}
+
+/*.widget:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    filter: blur(10px); transform: scale(1.3);
+    background: linear-gradient(90deg, #0fffc1, #7e0fff);
+    background-size: 200% 200%;
+    animation: animateGlow 10s ease infinite;
+}
+
+@keyframes animateGlow {
+      0%  {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+      100% {
+                background-position: 0% 50%
+            }
+    }*/
+

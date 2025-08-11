@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>
+    Новий віджет
+  </title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+      integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g=="
+      crossorigin="anonymous"/>
+
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      crossorigin="anonymous"/>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140316543-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-140316543-1');
+</script>
+
+
+        <link rel="stylesheet" href="/widget/widget-alert.css?ver=20250808_145414" />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"
+          integrity="sha512-74AKPNm8Tfd5E9c4otg7XNkIVfIe5ynON7wehpX/9Tv5VYcZvXZBAlcgOAjLHg6HeWyLujisAnle6+iKnyWd9Q=="
+          crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+          <script src="/shared/helpers.js"></script>
+          <script src="/shared/Fonts.js"></script>
+          <script src="/shared/CurrencyHelper.js"></script>
+          <script src="/widget/widget-interactions.js?ver=20250808_145414"></script>
+          <script src="/widget/widgetInteraction/widgetTimer.js?ver=20250808_145414"></script>
+          <script src="/widget/widgetInteraction/widgetMedia.js?ver=20250808_145414"></script>
+          <script src="/widget/widgetInteraction/widgetWheelOfFortune.js?ver=20250808_145414"></script>
+</head>
+
+<body>
+  <style>
+    #wheelOfFortune.hidden,
+    .interaction.hidden {
+      display: none;
+    }
+
+    .interaction {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .interaction.timer {
+      padding-top: 50px;
+    }
+
+    #wheelOfFortune {
+      display: inline-flex;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #wheel {
+      display: block;
+      user-select: none;
+    }
+
+    #spin {
+      user-select: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      inset: 35%;
+      background: #fff;
+      color: #fff;
+      box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      transition: 0.8s;
+      -webkit-tap-highlight-color: transparent;
+      text-transform: uppercase;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    #spin::after {
+      content: "";
+      position: absolute;
+      top: -17px;
+      border: 10px solid transparent;
+      border-bottom-color: currentColor;
+      border-top: none;
+    }
+
+  </style>
+  <div class="interaction hidden">
+    <div id="ytplayer-title"></div>
+    <div id="donator-name"></div>
+    <div class="video-container">
+      <div id="ytplayer"></div>
+    </div>
+  </div>
+
+  <script>
+    const WidgetConfig = {"widgetName":"Новий віджет","widgetBehaviour":"1","fontCounter":{"fontFamily":5,"fontSize":20,"isBold":false,"isItalic":false,"isUnderlined":false,"letterSpacing":4,"wordSpacing":0,"fontAnimation":"bounce","fontAnimationDuration":"2.5","infiniteAnimation":false,"color":{"r":"206","g":"204","b":"25","a":"1"},"colorShadow":"","colorShadowWidth":"15","textAlign":"center","stroke":0,"colorStroke":"2","colorTextBorder":{"r":"206","g":"204","b":"25","a":"1"},"colorTextBorderWidth":"0","gradient":false,"gradientOne":{"r":"206","g":"204","b":"25","a":"1"},"gradientTwo":{"r":"206","g":"204","b":"25","a":"1"},"gradientAngle":90},"videoTitleFont":{"fontFamily":5,"fontSize":20,"isBold":false,"isItalic":false,"isUnderlined":false,"letterSpacing":4,"wordSpacing":0,"fontAnimation":"none","fontAnimationDuration":"2.5","infiniteAnimation":false,"color":{"r":"206","g":"204","b":"25","a":"1"},"colorShadow":"","colorShadowWidth":"15","textAlign":"center","stroke":0,"colorStroke":"2","colorTextBorder":{"r":"206","g":"204","b":"25","a":"1"},"colorTextBorderWidth":"0","gradient":false,"gradientOne":{"r":"206","g":"204","b":"25","a":"1"},"gradientTwo":{"r":"206","g":"204","b":"25","a":"1"},"gradientAngle":90},"donatorNameFont":{"fontFamily":5,"fontSize":20,"isBold":false,"isItalic":false,"isUnderlined":false,"letterSpacing":4,"wordSpacing":0,"fontAnimation":"none","fontAnimationDuration":"2.5","infiniteAnimation":false,"color":{"r":"206","g":"204","b":"25","a":"1"},"colorShadow":"","colorShadowWidth":"15","textAlign":"center","stroke":0,"colorStroke":"2","colorTextBorder":{"r":"206","g":"204","b":"25","a":"1"},"colorTextBorderWidth":"0","gradient":false,"gradientOne":{"r":"206","g":"204","b":"25","a":"1"},"gradientTwo":{"r":"206","g":"204","b":"25","a":"1"},"gradientAngle":90},"textAnimation":"bounce","initialTime":60,"volume":8,"tieAmountToTime":false,"donateAmountToMinutes":false,"timeReduction2x":"","timeReduction4x":"","videoTimeLimit":5,"amountPerSecond":0.5,"widgetAvailable":true,"widgetType":"interactions","autoStartVideo":true,"timer":"1","showDonateImmediately":true,"showVideoTitle":true,"showDonatorName":true,"minVideoLikes":0,"minVideoViews":0,"minVideoComments":0,"widgetStatus":"active","readText":true,"textToShow":"Переміг сектор - {winner}!","textToDisplay":"Зібрано {got}/{amount} {currency}","amounts":[{"minAmount":5,"maxAmount":100,"isSpecificAmount":false,"specificAmount":100}],"startFromAmount":false,"amount":1000,"sectorsOfWheel":[{"color":"#f82","label":"Сектор1","percentage":25},{"color":"#0bf","label":"Сектор2","percentage":25},{"color":"#fb0","label":"Сектор3","percentage":25},{"color":"#0fb","label":"Сектор4","percentage":25}],"imageQrCode":false,"twitchId":"837411988","youtubeApiKey":"AIzaSyCwIlsaymGfukFGqDYSvrSDYJ9WWnVViPQ","yt":{"client_secret":"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"},"readAllText":false};
+    const userId = '63bac0364bd1c609c619d170';
+    const currentWidgetId = '66af2f76fff10182c00c261e';
+
+    const WIDGET_TYPE = {
+      ytVideo: '1',
+      timer: '2',
+	    wheelOfFortune: '3',
+    }
+
+    $(document).ready(function () {
+      const socket = helpers.buildSocket();
+
+      if (WidgetConfig.widgetBehaviour === WIDGET_TYPE.ytVideo) {
+        let videoArray = window.localStorage.getItem(currentWidgetId);
+        videoArray = videoArray ? JSON.parse(videoArray) : [];
+
+        let isPlaying = false;
+        let isAnotherVideoPlaying = false;
+        let isShowYoutubeToUser = true;
+
+        const resetAllAfterInteraction = () => {
+          $('.interaction').addClass('hidden');
+
+          if (!WidgetConfig.showDonateImmediately && socket) {
+            socket.emit('message', {userId, interactionWidget: true, widgetState: 2});
+          }
+
+          isPlaying = false;
+          socket.emit('message', {
+            userId,
+            interactionWidget: true,
+            widgetState: 3,
+            isAnotherVideoPlaying: false
+          });
+        }
+
+        const checkVideoAvailability = () => {
+          setInterval(() => {
+            if (videoArray.length > 0 && !isPlaying && !isAnotherVideoPlaying && isShowYoutubeToUser) {
+              isPlaying = true;
+              socket.emit('message', {
+                userId,
+                interactionWidget: true,
+                widgetState: 3,
+                isAnotherVideoPlaying: true
+              });
+
+              $('.interaction').removeClass('hidden');
+
+              createInteractionWidget(WidgetConfig, videoArray[0], resetAllAfterInteraction, socket, userId, currentWidgetId);
+
+              videoArray.shift();
+              window.localStorage.setItem(currentWidgetId, JSON.stringify(videoArray));
+              console.log('still in the list', videoArray)
+            }
+          }, 3000)
+        }
+
+        if (socket) {
+          socket.on([userId], message => {
+            if (userId === message.userId) {
+              if (message.skipMessage) {
+                window.location.reload();
+              }
+
+              if (message.toggleDonateVisibility) {
+                if (typeof message.showYoutubeToUser !== 'undefined') {
+                  isShowYoutubeToUser = message.showYoutubeToUser;
+                }
+              }
+
+              if (message.interactionWidget && message.widgetState === 3) {
+                isAnotherVideoPlaying = message.isAnotherVideoPlaying;
+              }
+
+              const isIdMatched = message.interactionWidgetId === currentWidgetId;
+
+              if (message.interactionWidget && message.lastDonate && message.widgetState === 1 && isIdMatched) {
+                videoArray.push(message.lastDonate);
+                window.localStorage.setItem(currentWidgetId, JSON.stringify(videoArray));
+              }
+            }
+          })
+
+          checkVideoAvailability();
+        }
+      }
+
+      if (WidgetConfig.widgetBehaviour === WIDGET_TYPE.timer) {
+        $(".interaction").empty();
+
+        $(".interaction").append('<div class="timer-container" />');
+        $(".interaction").addClass('timer');
+
+        createInteractionWidget(WidgetConfig, null, null, socket, userId, currentWidgetId);
+      }
+
+			if (WidgetConfig.widgetBehaviour === WIDGET_TYPE.wheelOfFortune) {
+			  WheelOfFortune.init({WidgetConfig, socket, userId, currentWidgetId});
+			}
+		});
+	</script>
+</body>
+
+</html>

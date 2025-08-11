@@ -1,0 +1,141 @@
+#widget-v4-2 {
+	display: flex;
+	justify-content: center;
+}
+
+#widget-v4-2 .progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+	width: 400px;
+    padding: 20px 30px;
+    background: #f6f6f7;
+    border-radius: 30px;
+}
+
+#widget-v4-2 .progress-bar-container.qr {
+	flex-direction: row;
+	align-items: center;
+	width: 500px;
+}
+
+#widget-v4-2 .progress-bar-collected {
+    margin-bottom: 10px;
+}
+
+#widget-v4-2 .progress-bar-collected > span {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: -0.005em;
+    color: #8d939c;
+}
+
+#widget-v4-2 #progress-bar {
+    width: 100%;
+    height: 15px;
+    background-color: #ffffff;
+    position: relative;
+    box-shadow: 0px 20px 40px 4px rgba(236, 236, 249, 0.5);
+    border-radius: 30px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#widget-v4-2 #progress-v4-2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    border-radius: 30px;
+    transition: width 0.5s ease-in-out;
+    background: linear-gradient(
+        91.9deg,
+        #3579f6 -9.6%,
+        rgba(219, 0, 255, 0.99) 107.95%
+    );
+}
+
+#widget-v4-2 #text-v4-2 {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    padding: 11px;
+    height: 35px;
+    border-radius: 30px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    transform: rotate(6deg);
+    color: #ffffff;
+    background: linear-gradient(
+        91.9deg,
+        #3579f6 -9.6%,
+        rgba(219, 0, 255, 0.99) 107.95%
+    );
+}
+
+#widget-v4-2 #collected-v4-2,
+#widget-v4-2 #collected-v4-2 + span {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 140%;
+    letter-spacing: -0.005em;
+    color: #151926;
+}
+
+#widget-v4-2 #goal-v4-2,
+#widget-v4-2 #goal-v4-2 + span {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: -0.005em;
+    color: #0a1830;
+}
+
+#widget-v4-2 #progress-v4-2.gradient-animation {
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400% !important;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 610px) {
+    #widget-v4-2 #progress-bar {
+        height: 10px;
+    }
+
+    #widget-v4-2 #text-v4-2 {
+        height: 24px;
+        font-size: 14px;
+    }
+
+    #widget-v4-2 #collected-v4-2,
+    #widget-v4-2 #collected-v4-2 + span {
+        font-size: 20px;
+    }
+
+    #widget-v4-2 #goal-v4-2,
+    #widget-v4-2 #goal-v4-2 + span {
+        font-size: 12px;
+    }
+
+	#widget-v4-2 .progress-bar-container.qr {
+		flex-direction: column;
+	}
+}

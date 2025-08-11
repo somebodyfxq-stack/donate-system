@@ -1,0 +1,208 @@
+/**  src/css/doc-api.css  **/
+
+.doc-api {
+
+}
+
+.doc-api .doc-api-section {
+    padding: 24px 32px 24px 32px;
+    margin-top: 24px;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 4px 10px 0px rgba(235, 235, 235, 0.80);
+}
+
+.doc-api section h3 {
+    padding: 0;
+    margin: 0 0 24px 0;
+    background: none;
+    color: #0A1830;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.doc-api .link {
+    background: #e7e9ec99;
+    border: 1px solid #e7e9ec99;
+    border-radius: 5px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+	font-size: 14px;
+	word-break: break-word;
+}
+
+.doc-api .badge-primary {
+    background-color: #1aabff;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.doc-api .box {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    color: #666;
+    font-size: 0.75rem;
+    margin: 15px 0;
+    padding: 15px 17px;
+}
+
+.doc-api .box h4 {
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+.doc-api .box .example {
+    color: #999999;
+    margin-top: 10px;
+}
+
+.doc-api .param-type.no-grow {
+    margin-right: 0;
+}
+
+.doc-api .param-header {
+    display: flex;
+    align-items: center;
+}
+
+.doc-api .param-name {
+    font-weight: 700;
+    margin-right: 20px;
+    min-width: 65px;
+}
+
+.doc-api .param-type {
+    font-family: monospace;
+    min-width: 50px;
+}
+
+.doc-api .param-code {
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    color: #999999;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: auto;
+    min-width: 30px;
+    padding: 0 3px;
+    text-align: center;
+}
+
+.doc-api .param-optional {
+    color: #155724;
+}
+
+.doc-api .param:not(:first-child) {
+    margin-top: 10px;
+}
+
+
+
+.doc-api .code-box {
+    background: #EBEDF4;
+    border-radius: 5px;
+}
+
+.doc-api .code-box .header {
+    background: #DEE2EC;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #666;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 15px;
+}
+
+.doc-api .code-box pre {
+    color: #18294E;
+    font-size: 0.7rem;
+    font-family: monospace;
+    line-height: 1.3rem;
+    margin: -5px 0 0 0;
+}
+
+.doc-api .code-box .text-code {
+    padding: 20px 15px 15px;
+}
+
+.doc-api .box h4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.doc-api .box h4 .badge {
+    font-size: 0.75rem;
+    font-weight: normal;
+}
+
+.doc-api .box h4 .badge.badge-warning {
+    color: #ffffff;
+}
+
+.doc-api .box h4 .response-type {
+    color: #AAA;
+    font-size: 0.7rem;
+    font-weight: normal;
+    margin-left: auto;
+    margin-right: 18px;
+}
+
+
+
+/**
+ * Dark theme
+ *
+ */
+
+.dark .doc-api .doc-api-section {
+    background: #191919;
+    box-shadow: none;
+}
+
+.dark .doc-api section h3 {
+    color: #FAFAFA;
+}
+
+.dark .doc-api .link {
+    background-color: #3c4d5f;
+    border-color: #3c4d5f;
+    color: #eeeeee;
+}
+
+.dark .doc-api .box {
+    border-color: #3c4d5f;
+    color: #cccccc;
+}
+
+.dark .doc-api .param-optional {
+    color: #20bd44;
+}
+
+.dark .doc-api .param-code {
+    background-color: #3c4d5f;
+    border-color: #3c4d5f;
+    color: #ccc;
+}
+
+.dark .doc-api .code-box {
+    background-color: #3c4d5f;
+    color: #eee;
+}
+
+.dark .doc-api .code-box pre {
+    color: #eee;
+}
+
+.dark .doc-api .code-box .header {
+    background-color: #4f647c;
+    color: #eee;
+}
+
+
+

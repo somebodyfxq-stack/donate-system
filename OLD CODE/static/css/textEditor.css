@@ -1,0 +1,25 @@
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+  height: 200px;
+}
+
+.ql-toolbar.ql-snow {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.ql-container.ql-snow {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.dark .quill .ql-editor.ql-blank::before,
+.dark .quill .ql-picker-label,
+.dark .quill .ql-fill,
+.dark .quill .ql-stroke {
+  color: #fff;
+  stroke: #fff;
+}
+
+.tox .tox-textfield:focus {
+  color: #000000
+}

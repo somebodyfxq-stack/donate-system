@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Kurale|Pangolin|Philosopher|monofont|Bad+Script|Comfortaa|Cormorant+SC|Didact+Gothic|Exo+2|Forum|Kelly+Slab|Kurale|Lobster|Lobster+Two|Lora|Marck+Script|Merriweather|Neucha|Noto+Serif|Open+Sans|Open+Sans+Condensed:300|Oswald|Philosopher|Play|Playfair+Display|Poiret+One|Press+Start+2P|Roboto+Condensed|Roboto+Slab|Rubik|Rubik+Mono+One|Ruslan+Display|Russo+One|Underdog|Amatic+SC|Andika|Caveat|Jura|Literata|Poiret+One|Fira+Sans+Extra+Condensed|Montserrat');
+
+body {
+    background-color: transparent;
+}
+
+.block {
+    overflow: hidden;
+}
+
+.img-container img {
+    background-repeat: no-repeat;
+    width: auto;
+    max-width: 100%;
+}
+
+.img-container.center-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.block .img,
+.block .text {
+    margin-top: 15px;
+}
+
+.flex {
+    display: flex;
+    flex-flow: column;
+}
+
+.bottom {
+    order: 2;
+}
+
+.top {
+    order: 1;
+}
+
+.img,
+.text {
+    max-width: 50%;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.animate__animated {
+    /* animation-duration: 2.5s!important; */
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+}
+
+.infinite-animation {
+    animation-iteration-count: 50;
+}
+
+.subscriberCount .text {
+    text-align: left;
+}
+
+.img.center {
+    position: absolute;
+}
+
+.text.center {
+    position: absolute;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-container .video-container {
+    display: flex;
+    justify-content: center;
+}
+
+.main-container .timer-container.infinite-animation {
+    animation-iteration-count: infinite;
+}

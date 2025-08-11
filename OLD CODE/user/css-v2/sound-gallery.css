@@ -1,0 +1,63 @@
+/*sound gallery*/
+
+audio {
+	height: 48px;
+  width: 80%;
+	margin-left: 37px;
+}
+
+.sound-label {
+	display: block;
+	width: 80%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-left: 2.4rem;
+	color: #6C7483;
+}
+
+.audio-checkbox {
+	display: contents !important;
+	cursor: pointer;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 4px solid transparent;
+	margin-bottom: 0;
+	outline: 0;
+}
+.audio-checkbox input[type="checkbox"] {
+	display: none;
+}
+
+.audio-checkbox .fa {
+	border:  2px solid #AFB3BB;
+	position: absolute;
+    color: #ffffff;
+    background-color: #ffffff;
+    padding: 3px;
+	top: 35px;
+    left: 12px;
+    border-radius: 50%;
+	font-size: 10px;
+}
+.selected-sound .fa {
+	border: none;
+	display: block !important;
+	position: absolute;
+    color: #ffffff;
+    background-color: #3d77d9;
+    padding: 4px;
+	top: 35px;
+    left: 12px;
+    border-radius: 50%;
+	font-size: 10px;
+}
+
+.audio-checkbox audio:hover {
+	filter: brightness(80%);
+}
+
+.selected-sound audio {
+	filter: brightness(80%);
+}

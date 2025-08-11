@@ -1,0 +1,142 @@
+/** ---------------------------------
+ *  Login
+ *  ---------------------------------
+ */
+
+body.dark .module-header,
+body.dark .alert-login,
+body.dark .agreement-login {
+	color: var(--color-bg);
+}
+
+body.dark .info-icon {
+	background: var(--color-bg);
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+}
+
+.main-column {
+    padding: 60px 30px 60px 30px;
+}
+
+.module-header h3 {
+    margin-bottom: 0;
+}
+
+.alert-container-login {
+	padding: 16px;
+	gap: 10px;
+	border-radius: 8px;
+	border: 2px solid #E3E5E8;
+}
+
+.alert-login {
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 20px;
+	letter-spacing: -0.07px;
+}
+
+.social-login {
+	background: var(--color-bg);
+	border-radius: 20px;
+	display: flex;
+	padding: 24px 24px 32px 24px;
+	margin-bottom: 20px;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+}
+
+.social-login-text {
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: -0.07px;
+}
+
+.social-icon {
+	height: 48px;
+	width: 48px;
+}
+
+.social-icon.twitch {
+    color: #6445A2;
+}
+
+.form-check a {
+    color: var(--color-accent);
+}
+
+.cloud-login-1 {
+	position: absolute;
+	top: 100px;
+	left: 190px;
+	width: 96px;
+}
+
+.cloud-login-2 {
+	position: absolute;
+	top: 410px;
+	left: 90px;
+	width: 116px;
+}
+
+.cloud-login-3 {
+	position: absolute;
+	top: 180px;
+	right: 140px;
+	width: 116px;
+}
+
+.cloud-login-4 {
+	position: absolute;
+	top: 365px;
+	right: 100px;
+	width: 54px;
+}
+
+@media (max-width: 1199px) {
+	.cloud-login-1 {
+		left: 60px;
+	}
+
+	.cloud-login-2 {
+		left: 0;
+	}
+
+	.cloud-login-3 {
+		right: 20px;
+	}
+
+	.cloud-login-4 {
+		right: 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.main-column {
+		padding: 20px 10px 30px 10px;
+	}
+
+	.social-login {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		padding: 16px 16px 16px 16px;
+		margin-bottom: 10px;
+	}
+
+	.social-icon {
+		width: 40px;
+	}
+
+	.social-icon.trovo {
+		width: 30px;
+		margin: 4px;
+	}
+}

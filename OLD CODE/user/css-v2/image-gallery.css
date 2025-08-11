@@ -1,0 +1,45 @@
+/*image gallery*/
+
+.nopad {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.image-checkbox {
+	cursor: pointer;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 8px solid transparent;
+	margin-bottom: 0;
+	outline: 0;
+}
+.image-checkbox input[type="checkbox"] {
+	display: none;
+}
+
+.image-checkbox .fa {
+	position: absolute;
+    color: #ffffff;
+    background-color: #3d77d9;
+    padding: 4px;
+	top: 15px;
+    left: 15px;
+    border-radius: 50%;
+	font-size: 10px;
+}
+
+.image-checkbox img {
+	border-radius: 10px !important;
+}
+
+.image-checkbox img:hover {
+	filter: brightness(70%);
+}
+
+.selected-image img {
+	filter: brightness(70%);
+}
+.selected-image .fa {
+	display: block !important;
+}

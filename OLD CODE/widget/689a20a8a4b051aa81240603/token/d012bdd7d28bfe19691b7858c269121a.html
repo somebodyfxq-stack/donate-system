@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+
+    <title>23423424</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+      integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g=="
+      crossorigin="anonymous"/>
+
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      crossorigin="anonymous"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140316543-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-140316543-1');
+</script>
+
+
+    <link rel="stylesheet" href="/widget/widget-top.css?ver=20250808_145414"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"
+        integrity="sha512-74AKPNm8Tfd5E9c4otg7XNkIVfIe5ynON7wehpX/9Tv5VYcZvXZBAlcgOAjLHg6HeWyLujisAnle6+iKnyWd9Q=="
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="/shared/helpers.js"></script>
+    <script src="/shared/Fonts.js"></script>
+
+</head>
+
+<body>
+
+<script>
+    const userId = '63bac0364bd1c609c619d170';
+    const widgetId = '689a20a8a4b051aa81240603';
+
+    $(document).ready(function () {
+        const widgetConfig = {"widgetName":"23423424","amountItems":"1","viewType":"list","marqueeDirection":"left","timeFrame":"day","customTimeFrame":["2025-08-11T16:55:38.602Z","2025-08-11T16:55:38.602Z"],"textSpeed":"5","textToShow":"{user} {amount}{currency}","link":"","widgetType":"topDonators","subscription":"all","widgetFor":"donate","showTierName":false,"highlightAmount":false,"fontSubscriptionName":{"fontFamily":29,"fontSize":20,"isBold":false,"isItalic":false,"isUnderlined":false,"letterSpacing":0,"wordSpacing":0,"fontAnimation":"none","fontAnimationDuration":"2.5","infiniteAnimation":false,"color":{"r":"255","g":"255","b":"255","a":"1"},"colorShadow":"","colorShadowWidth":"0","textAlign":"center","stroke":"3","colorStroke":{"r":0,"g":0,"b":0,"a":1},"colorTextBorder":{"r":"255","g":"255","b":"255","a":"1"},"colorTextBorderWidth":"0","gradient":false,"gradientOne":{"r":"206","g":"204","b":"25","a":"1"},"gradientTwo":{"r":"206","g":"204","b":"25","a":"1"},"gradientAngle":90},"font":{"fontFamily":"29","fontSize":20,"isBold":false,"isItalic":false,"isUnderlined":false,"letterSpacing":0,"wordSpacing":0,"fontAnimation":"none","fontAnimationDuration":"2.5","infiniteAnimation":false,"color":{"r":"53","g":"121","b":"246","a":"1"},"colorShadow":"","colorShadowWidth":"0","textAlign":"center","stroke":"3","colorStroke":{"r":0,"g":0,"b":0,"a":1},"colorTextBorder":{"r":"255","g":"255","b":"255","a":"1"},"colorTextBorderWidth":"0","gradient":false,"gradientOne":{"r":"206","g":"204","b":"25","a":"1"},"gradientTwo":{"r":"206","g":"204","b":"25","a":"1"},"gradientAngle":90},"fontAmount":{"fontFamily":29,"fontSize":20,"isBold":false,"isItalic":false,"isUnderlined":false,"letterSpacing":0,"wordSpacing":0,"fontAnimation":"none","fontAnimationDuration":"2.5","infiniteAnimation":false,"color":{"r":"53","g":"121","b":"246","a":"1"},"colorShadow":"","colorShadowWidth":"0","textAlign":"center","stroke":"3","colorStroke":{"r":0,"g":0,"b":0,"a":1},"colorTextBorder":{"r":"255","g":"255","b":"255","a":"1"},"colorTextBorderWidth":"0","gradient":false,"gradientOne":{"r":"206","g":"204","b":"25","a":"1"},"gradientTwo":{"r":"206","g":"204","b":"25","a":"1"},"gradientAngle":90},"timeLength":0,"widgetStatus":"active","specificGoalWidget":false,"goalWidgetId":"","viewList":"2","imageQrCode":false,"twitchId":"837411988","youtubeApiKey":"AIzaSyCwIlsaymGfukFGqDYSvrSDYJ9WWnVViPQ","yt":{"client_secret":"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"},"readAllText":false};
+        const font = widgetConfig.font;
+        const fontAmount = widgetConfig.fontAmount;
+        const fontSubscriptionName = widgetConfig.fontSubscriptionName;
+        const highlightAmount = widgetConfig.highlightAmount;
+
+        let textToShow = widgetConfig.textToShow;
+        let text = '';
+        let row = '';
+        let dataForSlider = {};
+        let user = '';
+        let isRunning = false;
+        let Token = '';
+        let highlightClassName = 'highlight';
+
+        let isNewDonate = true;
+
+        const CURRENCY = {
+            UAH: '₴',
+            USD: '$',
+            EUR: '€',
+        };
+
+        setInterval(() => {
+            isNewDonate = true;
+            getTopDonatorsWidgetData();
+        }, 300000); // refresh each 5 min
+
+        // function getYoutubeToken() {
+        //     const {refresh_token, client_id, client_secret} = widgetConfig.yt;
+        //     const formData = $.param({
+        //         grant_type: 'refresh_token',
+        //         refresh_token,
+        //         client_id,
+        //         client_secret,
+        //     });
+
+        //     $.ajax({
+        //         url: 'https://www.googleapis.com/oauth2/v4/token',
+        //         type: 'POST',
+        //         data: formData,
+        //         dataType: 'xml/html/script/json',
+        //         contentType: 'application/x-www-form-urlencoded',
+        //         success: function (body) {
+        //             const data = JSON.parse(body.responseText);
+        //             Token = data.access_token;
+        //         },
+        //         error: function (err) {
+        //             const data = JSON.parse(err.responseText);
+        //             Token = data.access_token;
+        //         }
+        //     });
+        // }
+
+        function getWidgetData() {
+            // getYoutubeToken();
+            switch (widgetConfig.widgetType) {
+                case 'topDonators':
+                case 'lastDonators':
+                case 'donationAmount':
+                case 'topDjYoutube':
+                case 'subscriberCounter':
+                case 'subscriberList':
+                    getTopDonatorsWidgetData();
+                    break;
+                case 'lastYoutubeSub':
+                case 'youtubeSubs':
+                    // youtubeWidget();
+                    break;
+                case 'lastTwitchSub':
+                case 'twitchSubs':
+                    // twitchWidget();
+                    break;
+                default:
+                    $('.top').addClass('hidden');
+            }
+        }
+
+        function getTopDonatorsWidgetData() {
+            if (!isNewDonate) {
+                setTimeout(() => {
+                    getTopDonatorsWidgetData();
+                }, 15000); // check every 15 sec
+                return;
+            }
+            isNewDonate = false;
+
+            let href = window.location.href.split('?');
+            href = href[0].replace('/preview', '');
+
+            const widgetUrl = `${href}/info`;
+
+            $.ajax({
+                url: widgetUrl,
+                type: 'GET',
+                contentType: 'application/json; charset=UTF-8',
+                success: function (data) {
+                    if (window.location.pathname.indexOf('/preview') !== -1) {
+                        //preview purpose
+                        data = [];
+                        const amountItems = parseFloat(widgetConfig.amountItems);
+                        for (let i = 0; i < amountItems; i++) {
+                            data.push({
+                                amount: i + '0',
+                                clientName: 'Користувач ' + i
+                            })
+                        }
+                        dataForSlider = data;
+                        buildWidget(data);
+                    } else {
+                        setTimeout(() => {
+                            getTopDonatorsWidgetData();
+                        }, 15000); // refresh each 15 sec
+                        dataForSlider = data;
+                        $('.top').show();
+                        buildWidget(data);
+                    }
+                },
+                error: function (err) {
+                    setTimeout(() => {
+                        getTopDonatorsWidgetData();
+                    }, 15000); // refresh each 15 sec
+                }
+            });
+        }
+
+        function buildLine(data) {
+            let tags = ['span', '/span'];
+            let direction = widgetConfig.marqueeDirection || 'left';
+            let speed = parseInt(widgetConfig.textSpeed);
+
+            if (widgetConfig.marqueeDirection === 'up'||
+                widgetConfig.marqueeDirection === 'down') {
+                tags = ['div', '/div'];
+                direction = widgetConfig.marqueeDirection;
+                speed = speed / 2;
+            }
+
+            let prevTierName = '';
+
+            data.forEach(function (element) {
+                let currency = element.currency && CURRENCY[element.currency] || CURRENCY.UAH;
+                currency = ["subscriberCounter", "topDjYoutube"].includes(widgetConfig.widgetType)  ? '' : currency;
+                let tierName = '';
+
+                if (widgetConfig.widgetType === "subscriberList" && widgetConfig.showTierName) {
+                    if (prevTierName !== element.tierName) {
+                        prevTierName = element.tierName;
+                        text += `<${tags[0]} class="fontSubscriptionName">${element.tierName}: <${tags[1]}>`;
+                    }
+                }
+
+                row = textToShow.replace(/ /g, '&nbsp;');
+                row = row.replace('{user}', element.clientName || '');
+                row = row.replace('{amount}', `<span class="highlight">${element.totalAmount || element.amount}</span>`);
+
+                row = row.replace('{currency}', currency);
+                text += `<${tags[0]}><span class="client-name text">${row}</span><${tags[1]}> `;
+            });
+
+            if ($('marquee').length === 0) {
+                $('.top').append(`<marquee class="text" behavior="scroll" scrollamount="${speed}" direction="${direction}">
+                    ${text}
+                </marquee>`);
+            } else {
+                $('marquee')[0].innerHTML = text;
+            }
+        }
+
+        function buildList(data) {
+            let midChar = '';
+            let frontChar = '';
+            let topHtmlList = '';
+            let i = 0;
+            let prevTierName = '';
+
+            for (i = 0; i < data.length; i++) {
+                const item = data[i];
+                let currency = item.currency && CURRENCY[item.currency] || CURRENCY.UAH;
+                currency = ["subscriberCounter", "topDjYoutube"].includes(widgetConfig.widgetType)  ? '' : currency;
+
+                let tierName = '';
+
+                if (widgetConfig.widgetType === "subscriberList" && widgetConfig.showTierName) {
+                    if (prevTierName !== item.tierName) {
+                        prevTierName = item.tierName;
+
+                        topHtmlList += `
+                            <div class="client">
+                                <div class="client-name text fontSubscriptionName">${item.tierName}:</div>
+                            </div>
+                        `;
+                    }
+                }
+
+                row = textToShow.replace(/ /g, '&nbsp;');
+                row = row.replace('{user}', item.clientName || '');
+                row = row.replace('{amount}', `<span class="highlight">${item.totalAmount || item.amount}</span>`);
+                row = row.replace('{currency}', currency);
+
+                if (widgetConfig.viewList === '2') {
+                    topHtmlList += `
+                        <div class="client">
+                            <div class="client-name text">${row}</div>
+                        </div>
+                    `;
+                } else {
+                    highlightClassName = 'total-amount';
+
+                    midChar = textToShow.substr(0, textToShow.indexOf('{amount}'));
+                    midChar = midChar.replace('{user}', '');
+                    midChar = midChar.replace('{currency}', '');
+                    frontChar = textToShow.substr(0, textToShow.indexOf('{user}'));
+                    const secondPart = textToShow.split(midChar);
+                    secondPart.shift();
+
+                    let lastPart = secondPart.join('').replace('{amount}', item.totalAmount || item.amount);
+                    lastPart = lastPart.replace('{currency}', currency);
+
+                    topHtmlList += `
+                        <div class="client">
+                            <div class="client-name text">${frontChar}${item.clientName || ''}${midChar}</div>
+                            <div class="total-amount text">${lastPart}</div>
+                        </div>
+                    `;
+                }
+            }
+
+            // <div class="total-amount text">${currency}${item.totalAmount || item.amount} ${textToShow.split('{amount}').pop()}</div>
+
+            const topHtml = `<div class="top-clients">${topHtmlList}</div>`;
+            $('.top').html(topHtml);
+        }
+
+        function buildSlider(data, i) {
+            dataForSlider.length - 1 > i ? i++ : i = 0;
+
+            if (!dataForSlider || dataForSlider.length === 0) return;
+
+            let tierName = '';
+
+            if (widgetConfig.widgetType === "subscriberList" && widgetConfig.showTierName && dataForSlider) {
+                const item = dataForSlider && dataForSlider[i];
+                tierName = `<span class="fontSubscriptionName">${item.tierName}: </span>`;
+            }
+
+            row = `${tierName}${textToShow.replace(/ /g, '&nbsp;')}`;
+
+            let currency = dataForSlider && dataForSlider[i].currency && CURRENCY[dataForSlider[i].currency] || CURRENCY.UAH;
+            currency = ["subscriberCounter", "topDjYoutube"].includes(widgetConfig.widgetType)  ? '' : currency;
+
+            row = row.replace('{user}', dataForSlider && dataForSlider[i] && dataForSlider[i].clientName || '');
+            row = row.replace('{amount}', `<span class="highlight">${dataForSlider && dataForSlider[i] && dataForSlider[i].totalAmount || dataForSlider[i] && dataForSlider[i].amount || ''}</span>`);
+            row = row.replace('{currency}', currency);
+
+            $('.top').html(`<div class="text">${row}</div>`);
+            if (widgetConfig.textAligment) {
+                $('.text').css({
+                    'text-align': widgetConfig.textAligment
+                });
+            }
+
+            setTimeout(() => {
+                buildSlider(dataForSlider, i);
+            }, parseInt(widgetConfig.textSpeed) * 1000);
+
+            isRunning = true;
+            setCss();
+        }
+
+        function buildWidget(data) {
+            text = '';
+            row = '';
+
+            if (parseFloat(widgetConfig.timeLength) !== 0) {
+                setTimeout(function () {
+                    $('.top').hide();
+                }, widgetConfig.timeLength * 1000);
+            }
+
+            if (widgetConfig.viewType === 'line') {
+                buildLine(data);
+            } else if (widgetConfig.viewType === 'list') {
+                buildList(data);
+            } else {
+                if (!isRunning) {
+                    buildSlider();
+                }
+            }
+            setCss();
+        }
+
+        function setCss() {
+            $('.text').addClass(
+				'animated animate__animated animate__' + widgetConfig.font.fontAnimation +
+				(widgetConfig.font.infiniteAnimation ? ' animate__infinite' : '')
+			);
+            $('.text, .text span').css({
+                'fontFamily': FONTS[font.fontFamily] ? FONTS[font.fontFamily].id : font.fontFamily,
+                'fontSize': font.fontSize + 'px',
+                'letterSpacing': font.letterSpacing + 'px',
+                'wordSpacing': font.wordSpacing + 'px',
+                'fontWeight': !font.isBold ? 100 : 'bold',
+                'fontStyle': !font.isItalic ? 'normal' : 'italic',
+                'text-decoration': !font.isUnderlined ? '' : 'underline',
+                'textShadow': `rgba( ${font.colorShadow.r},
+                                ${font.colorShadow.g},
+                                ${font.colorShadow.b},
+                                ${font.colorShadow.a}) 0px 0px ${font.colorShadowWidth}px`,
+                'color': `rgba( ${font.color.r},
+                                ${font.color.g},
+                                ${font.color.b},
+                                ${font.color.a})`,
+                ...(font.stroke !== '0' && font.colorStroke && {
+                    backgroundColor: `rgba(${font.colorStroke?.r},${font.colorStroke?.g},${font.colorStroke?.b},${font.colorStroke?.a})`,
+                    'WebkitTextStroke': `${font.stroke}px transparent`,
+                    '-webkit-background-clip': `text`,
+                })
+            });
+
+            if (widgetConfig.showTierName) {
+                $(`.fontSubscriptionName`).css({
+                    'fontFamily': FONTS[fontSubscriptionName.fontFamily] ? FONTS[fontSubscriptionName.fontFamily].id : fontSubscriptionName.fontFamily,
+                    'fontSize': fontSubscriptionName.fontSize + 'px',
+                    'letterSpacing': fontSubscriptionName.letterSpacing + 'px',
+                    'wordSpacing': fontSubscriptionName.wordSpacing + 'px',
+                    'fontWeight': !fontSubscriptionName.isBold ? 100 : 'bold',
+                    'fontStyle': !fontSubscriptionName.isItalic ? 'normal' : 'italic',
+                    'text-decoration': !fontSubscriptionName.isUnderlined ? '' : 'underline',
+                    'textShadow': `rgba( ${fontSubscriptionName.colorShadow.r},
+                                    ${fontSubscriptionName.colorShadow.g},
+                                    ${fontSubscriptionName.colorShadow.b},
+                                    ${fontSubscriptionName.colorShadow.a}) 0px 0px ${fontSubscriptionName.colorShadowWidth}px`,
+                    'color': `rgba( ${fontSubscriptionName.color.r},
+                                    ${fontSubscriptionName.color.g},
+                                    ${fontSubscriptionName.color.b},
+                                    ${fontSubscriptionName.color.a})`,
+                    ...(fontSubscriptionName.stroke !== '0' && fontSubscriptionName.colorStroke && {
+                        backgroundColor: `rgba(${fontSubscriptionName.colorStroke?.r},${fontSubscriptionName.colorStroke?.g},${fontSubscriptionName.colorStroke?.b},${fontSubscriptionName.colorStroke?.a})`,
+                        'WebkitTextStroke': `${fontSubscriptionName.stroke}px transparent`,
+                        '-webkit-background-clip': `text`,
+                    })
+                });
+            }
+
+            if (highlightAmount) {
+                $(`.${highlightClassName}`).css({
+                    'fontFamily': FONTS[fontAmount.fontFamily] ? FONTS[fontAmount.fontFamily].id : fontAmount.fontFamily,
+                    'fontSize': fontAmount.fontSize + 'px',
+                    'letterSpacing': fontAmount.letterSpacing + 'px',
+                    'wordSpacing': fontAmount.wordSpacing + 'px',
+                    'fontWeight': !fontAmount.isBold ? 100 : 'bold',
+                    'fontStyle': !fontAmount.isItalic ? 'normal' : 'italic',
+                    'text-decoration': !fontAmount.isUnderlined ? '' : 'underline',
+                    'textShadow': `rgba( ${fontAmount.colorShadow.r},
+                                    ${fontAmount.colorShadow.g},
+                                    ${fontAmount.colorShadow.b},
+                                    ${fontAmount.colorShadow.a}) 0px 0px ${fontAmount.colorShadowWidth}px`,
+                    'color': `rgba( ${fontAmount.color.r},
+                                    ${fontAmount.color.g},
+                                    ${fontAmount.color.b},
+                                    ${fontAmount.color.a})`,
+                    ...(fontAmount.stroke !== '0' && fontAmount.colorStroke && {
+                        backgroundColor: `rgba(${fontAmount.colorStroke?.r},${fontAmount.colorStroke?.g},${fontAmount.colorStroke?.b},${fontAmount.colorStroke?.a})`,
+                        'WebkitTextStroke': `${fontAmount.stroke}px transparent`,
+                        '-webkit-background-clip': `text`,
+                    })
+                });
+            }
+        }
+
+        // function youtubeWidget() {
+        //     let $top = $('.top');
+
+        //     $top.append(`<div class="subscriberCount"></div>`);
+        //     $('.subscriberCount').css({
+        //         'fontFamily': FONTS[font.fontFamily] ? FONTS[font.fontFamily].id : font.fontFamily,
+        //         'fontSize': font.fontSize + 'px',
+        //         'letterSpacing': font.letterSpacing,
+        //         'wordSpacing': font.wordSpacing,
+        //         'fontWeight': !font.isBold ? 100 : 'bold',
+        //         'fontStyle': !font.isItalic ? 'normal' : 'italic',
+        //         'text-decoration': !font.isUnderlined ? '' : 'underline',
+        //         'textShadow': `${font.colorShadow} 0px 0px ${font.colorShadowWidth}px`,
+        //         'color': `rgba( ${font.color.r},
+        //                                     ${font.color.g},
+        //                                     ${font.color.b},
+        //                                     ${font.color.a})`
+        //     });
+
+        //     youtubeSubscribers();
+        //     $top.removeClass('hidden');
+        // }
+
+        // function youtubeSubscribers() {
+        //     let token = widgetConfig.youtubeToken;//user token from db
+        //     let userKey = widgetConfig.youtubeId;//user key from db
+        //     let apiKey = widgetConfig.youtubeApiKey;//API key from https://console.developers.google.com/apis/credentials?project=donatello-dev-214810&folder&organizationId
+
+        //     if (widgetConfig.widgetType === 'youtubeSubs') {
+        //         url = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${userKey}&key=${apiKey}`;
+        //     } else {
+        //         url = `https://www.googleapis.com/youtube/v3/subscriptions?part=subscriberSnippet&myRecentSubscribers=true&access_token=${Token}&key=${userKey}`;
+        //     }
+
+        //     $('.subscriberCount').removeClass('animated animate__animated animate__' + font.fontAnimation);
+
+        //     $.ajax({
+        //         url: url,
+        //         type: 'GET',
+        //         contentType: 'application/json; charset=UTF-8',
+        //         success: function (data) {
+        //             $('.subscriberCount').addClass('animated animate__animated animate__' + font.fontAnimation);
+
+        //             if (widgetConfig.widgetType === 'youtubeSubs') {
+        //                 if (data.items[0].statistics.subscriberCount !== user) {
+        //                     user = data.items[0].statistics.subscriberCount;
+        //                     $('.subscriberCount').text(user);
+        //                     $('.top').removeClass('hidden');
+        //                 }
+        //             } else {
+        //                 if (data.items[0].subscriberSnippet.title !== user) {
+        //                     let textToShow = widgetConfig.textToShow;
+        //                     user = data.items[0].subscriberSnippet.title;
+
+        //                     $('.subscriberCount').text(textToShow.replace('{user}', user));
+        //                     $('.top').removeClass('hidden');
+        //                 }
+        //             }
+
+        //             if (parseFloat(widgetConfig.timeLength) !== 0) {
+        //                 setTimeout(function () {
+        //                     $('.top').addClass('hidden');
+        //                     youtubeSubscribers();
+        //                 }, widgetConfig.timeLength * 1000);
+        //             } else {
+        //                 setTimeout(function () {
+        //                     youtubeSubscribers();
+        //                 }, 5000);
+        //             }
+        //         },
+        //         error: function (err) {
+        //             setTimeout(function () {
+        //                 youtubeSubscribers();
+        //             }, 8000);
+        //         }
+        //     });
+        // }
+
+        // function twitchWidget() {
+        //     let $top = $('.top');
+        //     $top.append(`<div class="subscriberCount"><div class="text"></div></div>`);
+
+        //     let $text = $('.text');
+        //     $text.css({'float': 'left', 'marginLeft': '20px'});
+        //     $('.subscriberCount').css({
+        //         'fontFamily': FONTS[font.fontFamily] ? FONTS[font.fontFamily].id : font.fontFamily,
+        //         'fontSize': font.fontSize + 'px',
+        //         'letterSpacing': font.letterSpacing,
+        //         'wordSpacing': font.wordSpacing,
+        //         'fontWeight': !font.isBold ? 100 : 'bold',
+        //         'fontStyle': !font.isItalic ? 'normal' : 'italic',
+        //         'text-decoration': !font.isUnderlined ? '' : 'underline',
+        //         'textShadow': `rgba( ${font.colorShadow.r},
+        //                         ${font.colorShadow.g},
+        //                         ${font.colorShadow.b},
+        //                         ${font.colorShadow.a}) 0px 0px ${font.colorShadowWidth}px`,
+        //         'color': `rgba( ${font.color.r},
+        //                         ${font.color.g},
+        //                         ${font.color.b},
+        //                         ${font.color.a})`
+        //     });
+
+        //     twitchSubscribers();
+        //     $top.removeClass('hidden');
+        // }
+
+        // function twitchSubscribers() {
+        //     let userId = widgetConfig.twitchId;
+        //     let clientId = widgetConfig.twitchClientId;
+
+        //     $('.subscriberCount').removeClass('animated animate__animated animate__' + font.fontAnimation);
+        //     $.ajax({
+        //         url: `https://api.twitch.tv/kraken/channels/${userId}/follows?api_version=5&client_id=${clientId}&limit=1`,
+        //         type: 'GET',
+        //         contentType: 'application/json; charset=UTF-8',
+        //         success: function (data) {
+        //             $('.subscriberCount').addClass('animated animate__animated animate__' + font.fontAnimation);
+
+        //             if (widgetConfig.widgetType === 'lastTwitchSub') {
+        //                 if (data.follows[0].user.name !== user) {
+        //                     let textToShow = widgetConfig.textToShow;
+        //                     user = data.follows[0].user.name;
+
+        //                     $('.text').text(textToShow.replace('{user}', user));
+        //                     $('.top').removeClass('hidden');
+        //                 }
+        //             } else {
+        //                 if (data._total !== user) {
+        //                     let textToShow = widgetConfig.textToShow;
+        //                     user = data._total;
+        //                     $('.text').text(textToShow.replace('{user}', user));
+        //                     $('.top').removeClass('hidden');
+        //                 }
+        //             }
+
+        //             if (parseFloat(widgetConfig.timeLength) !== 0) {
+        //                 setTimeout(function () {
+        //                     $('.top').addClass('hidden');
+        //                     twitchSubscribers();
+        //                 }, 5 * 1000);
+        //             } else {
+        //                 setTimeout(function () {
+        //                     twitchSubscribers();
+        //                 }, 5000);
+        //             }
+        //         },
+        //         error: function (err) {
+        //             setTimeout(function () {
+        //                 twitchSubscribers();
+        //             }, 8000);
+        //         }
+        //     });
+        // }
+
+        function initSocket() {
+            socket = helpers.buildSocket();
+
+            if (socket) {
+                // Listen websocket event as userId
+                socket.on([userId], message => {
+                    if (userId === message.userId && message.updateTopWidget) {
+                        if (message.isSubscription && widgetConfig.widgetFor === 'subscription') {
+                            isNewDonate = true;
+                            getTopDonatorsWidgetData();
+                            return
+                        }
+
+                        if (!message.isSubscription && widgetConfig.widgetFor === 'donate') {
+                            isNewDonate = true;
+                            getTopDonatorsWidgetData();
+                        }
+                    }
+                });
+            }
+        }
+
+        initSocket();
+        getWidgetData();
+    });
+</script>
+
+<div class="text-container">
+    <div class="top">
+    </div>
+</div>
+
+</body>
+</html>

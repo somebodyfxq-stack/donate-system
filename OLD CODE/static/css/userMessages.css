@@ -1,0 +1,612 @@
+.dark .user-messages-section {
+	background: #191919;
+    box-shadow: none;
+}
+
+.my-messages .chat-container {
+  padding: 20px;
+  margin: 20px;
+  max-height: 500px;
+  overflow: auto;
+}
+
+.my-messages .text-editor-container .ql-toolbar.ql-snow + .ql-container.ql-snow {
+  height: 80px;
+}
+
+.my-messages .users-chat-container {
+  max-height: 420px;
+  overflow: hidden auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 4px;
+}
+
+
+.messages .message-container {
+  width: 70%;
+}
+
+.messages .message-bubble {
+  padding: 20px;
+  width: 70%;
+  border-radius: 20px;
+  border-top-right-radius: 0px;
+}
+
+.messages .message-bubble.is-my-message {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 20px;
+  background-color: rgb(86, 86, 86) !important;
+}
+
+.dark .my-messages.my-subscriptions .sub-item:hover {
+	background: #1E1E1E;
+}
+
+.user-messages-section {
+	width: 100%;
+	border-radius: 20px;
+	background: #FFF;
+	box-shadow: 0px 4px 10px 0px rgba(235, 235, 235, 0.80);
+}
+
+.user-messages-section .no-messages {
+	padding: 72px 12px;
+}
+
+.user-messages-section .no-messages i {
+	padding: 16px;
+	font-size: 24px;
+	background-color: #F6F6F7;
+	border-radius: 10px;
+	color: #3579F6;
+}
+
+.dark .user-messages-section .no-messages i,
+.dark .messages-section .messages-item i {
+    background-color: #272727;
+    color: #5991F6;
+}
+
+.user-messages-section .no-messages span {
+	color: var(--landing-donate-light-mode-gray-60, #6C7483);
+	text-align: center;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.user-messages-section .user-messages-left-part {
+	border-right: 1px solid #E3E5E8;
+	width: 35%;
+}
+
+.user-messages-section .user-messages-right-part {
+	width: 65%;
+}
+
+.user-messages-section .user-messages-left-part .search-field {
+	padding: 12px;
+	border-bottom: 1px solid #E3E5E8;
+}
+
+.user-messages-section .user-messages-left-part input,
+.user-messages-section .user-messages-right-part input {
+	all: unset;
+}
+
+.user-messages-section .user-messages-left-part .input-group,
+.user-messages-section .user-messages-right-part .input-group {
+    border-radius: 10px;
+    border: 2px solid #E3E5E8;
+    padding: 8px 16px;
+	height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dark .user-messages-section .user-messages-left-part .input-group,
+.dark .user-messages-section .user-messages-right-part .input-group {
+    border-color: #272727;
+	background-color: #272727;
+}
+
+.user-messages-section .user-messages-left-part .client-name-column {
+	padding: 12px;
+	overflow-y: auto;
+	max-height: 510px;
+}
+
+.user-messages-section .user-messages-left-part .sub-item {
+	position: relative;
+	box-shadow: none;
+}
+
+.user-messages-section .user-messages-left-part .sub-item:hover {
+	background-color: #E4ECFA;
+}
+
+.user-messages-section .user-messages-left-part .sub-item img {
+	width: 48px;
+	height: 48px;
+	margin-right: 8px;
+}
+
+.user-messages-section .user-messages-left-part .sub-item img {
+	width: 48px;
+	height: 48px;
+}
+
+.user-messages-section .user-messages-left-part .sub-item span {
+	color: var(--landing-donate-light-mode-gray-60, #6C7483);
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.user-messages-section .user-messages-left-part .sub-item .new-messages-notification {
+	position: absolute;
+	top: calc(50% - 4px);
+	right: 16px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: #3579F6;
+}
+
+.user-messages-section .user-messages-right-part .about-author-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	padding: 12px;
+	border-bottom: 1px solid #E3E5E8;
+}
+
+.user-messages-section .user-messages-right-part .text-editor-wrapper {
+	padding: 12px;
+	border-top: 1px solid #E3E5E8;
+}
+
+.user-messages-section .user-messages-right-part .about-author img,
+.user-messages-section .user-messages-right-part .messages img  {
+	width: 40px;
+	height: 40px;
+	margin-right: 8px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.user-messages-section .user-messages-right-part .about-author-container .btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 10px;
+	left: 12px;
+	min-width: 24px;
+	padding: 10px 12px;
+	border-radius: 10px;
+	background: var(--landing-donate-light-mode-gray-10, #F6F6F7);
+}
+
+.dark .user-messages-section .user-messages-right-part .about-author-container .btn {
+	background: #272727;
+}
+
+.user-messages-section .user-messages-right-part .about-author-container i {
+	font-size: 24px;
+}
+
+.dark .user-messages-section .user-messages-right-part .about-author-container i {
+	color: #fefefe;
+}
+
+.user-messages-section .user-messages-right-part .about-author-container span {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.user-messages-section .user-messages-right-part .messages .message-bubble p {
+	margin-bottom: 6px;
+	word-wrap: break-word;
+}
+
+.user-messages-section .user-messages-right-part .messages .message-bubble {
+	padding: 16px 16px 8px 16px;
+	background-color: #F6F6F7 !important;
+	color: #0A1830 !important;
+	font-size: 14px;
+	font-weight: 500;
+	border-radius: 10px;
+	word-wrap: break-word;
+}
+
+.dark .user-messages-section .user-messages-right-part .messages .message-bubble {
+	background-color: #272727 !important;
+	color: #fafafa !important;
+}
+
+.user-messages-section .user-messages-right-part .messages .message-bubble.is-my-message {
+	background-color: #E4ECFA !important;
+}
+
+.dark .user-messages-section .user-messages-right-part .messages .message-bubble.is-my-message {
+	background-color: #565656 !important;
+}
+
+.user-messages-section .user-messages-left-part .sub-item.active {
+	background-color: #F6F6F7;
+}
+
+.dark .user-messages-section .user-messages-left-part .sub-item.active {
+	background-color: #272727;
+}
+
+.user-messages-section .message-group .day-header,
+.user-messages-section .message-group .time {
+	margin: 16px 0;
+	color: var(--landing-donate-light-mode-gray-60, #6C7483);
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.dark .user-messages-section .message-group .day-header,
+.dark .user-messages-section .message-group .time {
+	color: #fefefe;
+}
+
+.user-messages-section .welcome-message-bage {
+	margin-left: 45px;
+    margin-bottom: 8px;
+    padding: 4px 8px;
+    background: #E4ECFA;
+    width: fit-content;
+    border-radius: 8px;
+    color: var(--landing-donate-light-mode-accent, #3579F6);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dark .user-messages-section .welcome-message-bage {
+	background-color: #434343;
+    color: #5991F6;
+}
+
+.user-messages-section .users-chat-container::-webkit-scrollbar {
+	width: 4px;
+	margin-left: 3px;
+}
+
+.user-messages-section .users-chat-container::-webkit-scrollbar-thumb {
+	background: #C7CBD1;
+	border-radius: 10px;
+	margin-right: 3px;
+}
+
+.user-messages-section .users-chat-container::-webkit-scrollbar-thumb:hover {
+	background: #b1afaf;
+}
+
+.user-messages-section .user-messages-right-part .input-group {
+	height: 48px;
+}
+
+.user-messages-section .send-message-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	background: #3579F6;
+}
+
+.user-messages-section .send-message-button i {
+	font-size: 20px;
+	color: #fefefe;
+}
+
+.user-messages-section .messages {
+	margin-top: 0;
+	padding: 12px;
+	box-shadow: none;
+	min-height: 250px;
+}
+
+.user-messages-section .author-nickname a,
+.user-messages-section .author-nickname .client-name {
+	color: #0A1830;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.dark .user-messages-section .author-nickname a,
+.dark .user-messages-section .author-nickname .client-name {
+	color: #FAFAFA;
+}
+
+.dark .user-messages-section .ql-toolbar.ql-snow,
+.dark .user-messages-section .ql-container.ql-snow,
+.dark .user-messages-section .user-messages-right-part .about-author-container,
+.dark .user-messages-section .user-messages-left-part .search-field,
+.dark .user-messages-section .user-messages-left-part,
+.dark .user-messages-section .user-messages-right-part .text-editor-wrapper {
+	border-color: #4d4e4f;
+}
+
+/* Mailing section */
+
+.messages-section .no-mailing {
+	min-height: 350px;
+}
+
+.messages-section .no-mailing i,
+.messages-section .messages-item i {
+	padding: 16px;
+    font-size: 24px;
+    background-color: #F6F6F7;
+    border-radius: 10px;
+    color: #3579F6;
+}
+
+.messages-section .no-mailing.messages-item span {
+	color: var(--landing-donate-light-mode-gray-60, #6C7483);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+	margin-bottom: 24px;
+}
+
+.messages-section .btn-primary {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 40px;
+}
+
+.messages-section .btn-dark,
+.create-mailing-modal .btn-dark,
+.create-mailing-modal .btn-outline-dark {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 40px;
+}
+
+.create-mailing-modal .btn-outline-dark {
+	border-width: 2px;
+}
+
+.dark .create-mailing-modal .btn-outline-dark {
+	background: #3E3E3E;
+    border: none;
+    color: #FAFAFA;
+}
+
+.messages-section .messages-item .create-welcome-message-icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 26px;
+	height: 26px;
+	border-radius: 5px;
+	background-color: #F6F6F7;
+	cursor: pointer;
+}
+
+.dark .messages-section .messages-item .create-welcome-message-icons {
+	background-color: #272727;
+}
+
+.messages-section .messages-item .create-welcome-message-icon {
+	color: #0A1830;
+	font-size: 16px;
+	padding: 0;
+	background-color: transparent;
+}
+
+.dark .messages-section .messages-item .create-welcome-message-icon {
+	color: #FAFAFA;
+	background-color: transparent;
+}
+
+.messages-section .messages-item {
+    align-items: center;
+    padding: 24px;
+    margin-top: 16px;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 4px 10px 0px rgba(235, 235, 235, 0.80);
+    border: 1px solid #E3E5E8;
+}
+
+.messages-section .messages-item .title {
+    color: #0A1830;
+    font-size: 16px;
+    font-weight: 700;
+	margin-bottom: 8px;
+}
+
+.messages-section .messages-item span,
+.messages-section .messages-item .mailing-title{
+	margin-bottom: 4px;
+	color: #6C7483;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.messages-section .messages-item .mailing-date,
+.messages-section .messages-item .mailing-level {
+    color: #0A1830;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.messages-section .messages-item .mailing-text {
+	padding: 16px;
+	color: #0A1830;
+	font-size: 14px;
+	font-weight: 500;
+	background-color: #E4ECFA;
+	border-radius: 10px;
+	word-break: break-word;
+	max-height: 200px;
+	overflow: auto;
+}
+
+.messages-section .messages-item .message-item:not(:last-child) {
+	align-items: center;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+	border-bottom: 1px solid #E3E5E8;
+}
+
+.messages-section .messages-item .mailing-text p:last-child {
+	margin: 0;
+}
+
+.messages .modal-dialog.create-mailing-modal {
+	max-width: 580px;
+}
+
+.messages .create-mailing-modal > .modal-content {
+	padding: 32px;
+	border-radius: 30px;
+}
+
+.messages .create-mailing-modal h4 {
+	font-size: 24px;
+	font-weight: 800;
+}
+
+.messages .create-mailing-modal .icon-close-modal {
+	position: absolute;
+	top: -23px;
+	right: -18px;
+	padding: 10px;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.messages .create-mailing-modal .create-mailing-description {
+	padding: 16px;
+	margin-bottom: 24px;
+	border-radius: 10px;
+	background: #F6F6F7;
+	color: #0A1830;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.messages .create-mailing-modal .lable {
+	color: #6C7483;
+	font-size: 14px;
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+.messages .create-mailing-modal .form-control {
+	margin-bottom: 24px;
+}
+
+.messages .create-mailing-modal .send-message-button-wrapper {
+	margin-top: 32px;
+}
+
+.dark .messages-section .messages-item {
+    background: #191919;
+    box-shadow: none;
+    border: 1px solid #191919;
+}
+
+.dark .messages-section .messages-item .title,
+.dark .messages-section .messages-item .mailing-date,
+.dark .messages-section .messages-item .mailing-level {
+	color: #FAFAFA;
+}
+
+.dark .messages-section .messages-item span,
+.dark .messages-section .messages-item .mailing-title {
+	color: #B4B4B4;
+}
+
+.dark .messages-section .messages-item .message-item:not(:last-child) {
+	border-bottom: 1px solid #6C7483;
+}
+
+.dark .messages .create-mailing-modal .create-mailing-description {
+	background-color: #191919;
+	color: #B4B4B4;
+}
+
+.dark .messages-section .messages-item .mailing-text {
+	background-color: #565656;
+	color: #FAFAFA;
+}
+
+.emoji-button {
+	font-size: 22px;
+	cursor: pointer;
+}
+
+.emoji-button:active {
+	font-size: 23px;
+}
+
+em-emoji-picker {
+	position: absolute;
+	bottom: 50px;
+	right: -50px;
+}
+
+@media (min-width: 1330px) {
+	.user-messages-section .no-messages span {
+		width: 50%;
+	}
+}
+
+@media (max-width: 575px) {
+	.user-messages-section .user-messages-left-part {
+		width: 100%;
+	}
+
+	.user-messages-section .user-messages-right-part {
+		width: 100%;
+	}
+
+	.user-messages-section .user-messages-right-part .messages .message-bubble {
+		width: 100%;
+	}
+
+	.user-messages-section .user-messages-right-part .text-editor-wrapper {
+		border-top: none;
+	}
+
+	.messages .modal-dialog.create-mailing-modal {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	.messages .create-mailing-modal > .modal-content {
+		padding: 32px 16px;
+		border-radius: 30px 30px 0px 0px;
+	}
+
+	.messages .create-mailing-modal .icon-close-modal {
+		right: -5px;
+	}
+
+	.messages .create-mailing-modal .create-mailing-description,
+	.messages .create-mailing-modal .form-control,
+	.messages .create-mailing-modal h4 {
+		margin-bottom: 16px;
+	}
+
+	.messages .create-mailing-modal .btn-dark,
+	.messages .create-mailing-modal .btn-outline-dark {
+		width: 100%;
+	}
+}

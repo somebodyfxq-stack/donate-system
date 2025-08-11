@@ -1,0 +1,4 @@
+export const configEnum = {
+    GET_CONFIG_SUCCESS: 'GET_CONFIG_SUCCESS',
+    GET_CONFIG_FAILURE: 'GET_CONFIG_FAILURE'
+};

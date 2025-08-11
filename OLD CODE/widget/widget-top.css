@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Kurale|Pangolin|Philosopher|monofont|Bad+Script|Comfortaa|Cormorant+SC|Didact+Gothic|Exo+2|Forum|Kelly+Slab|Kurale|Lobster|Lobster+Two|Lora|Marck+Script|Merriweather|Neucha|Noto+Serif|Open+Sans|Open+Sans+Condensed:300|Oswald|Philosopher|Play|Playfair+Display|Poiret+One|Press+Start+2P|Roboto+Condensed|Roboto+Slab|Rubik|Rubik+Mono+One|Ruslan+Display|Russo+One|Underdog|Amatic+SC|Andika|Caveat|Jura|Literata|Poiret+One|Fira+Sans+Extra+Condensed|Montserrat');
+
+body {
+  background-color: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+.top-clients {
+  margin: 20px;
+}
+
+.client {
+  display: flex;
+  justify-content: space-between;
+}
